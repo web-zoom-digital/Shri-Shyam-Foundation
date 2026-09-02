@@ -352,20 +352,20 @@ export function ProgramsPageClient() {
       </section>
 
       {/* CTA */}
-      <section className="section-spacing bg-slate-50">
+      <section className="section-spacing bg-white">
         <div className="container-custom text-center">
           <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
-            className="bg-gradient-to-br from-slate-700 to-slate-900 rounded-3xl p-14 text-white shadow-2xl shadow-slate-900/25">
-            <h2 className="text-4xl font-extrabold mb-4">Your Support Keeps These Programs Running</h2>
-            <p className="text-slate-200 text-lg max-w-2xl mx-auto mb-8">Behind every hot meal, every medical consultation and every scholarship is a donor who chose to care. Be that person today.</p>
+            className="bg-[#fef2f2] rounded-3xl p-14 text-slate-900 shadow-xl shadow-red-500/5 border border-red-100">
+            <h2 className="text-4xl font-extrabold mb-4 text-slate-900">Your Support Keeps These Programs Running</h2>
+            <p className="text-slate-600 text-lg max-w-2xl mx-auto mb-8">Behind every hot meal, every medical consultation and every scholarship is a donor who chose to care. Be that person today.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/donate">
-                <Button className="bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-full px-10 h-14 text-base shadow-xl border-0">
+                <Button className="bg-[#dc2626] hover:bg-[#b91c1c] text-white font-bold rounded-full px-10 h-14 text-base shadow-xl border-0">
                   Donate Now <HandCoins className="w-4 h-4 ml-2" />
                 </Button>
               </Link>
               <Link href="/contact">
-                <Button className="bg-white/10 text-white hover:bg-white/20 font-bold rounded-full px-10 h-14 text-base border border-white/20">
+                <Button className="bg-white text-[#dc2626] hover:bg-red-50 hover:text-[#b91c1c] font-bold rounded-full px-10 h-14 text-base border border-red-200 shadow-sm">
                   Volunteer With Us <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </Link>

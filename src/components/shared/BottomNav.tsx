@@ -52,14 +52,14 @@ export function BottomNav() {
                 link.color
                   ? link.color
                   : link.highlight || isActive
-                    ? "text-slate-700"
+                    ? "text-slate-900"
                     : "text-slate-500"
               }`}
             >
               <span
                 className={`flex items-center justify-center rounded-full transition-all ${
                   link.highlight
-                    ? "w-11 h-11 -mt-4 bg-slate-600 text-white shadow-lg shadow-slate-600/35 ring-4 ring-white"
+                    ? "w-11 h-11 -mt-4 bg-[#dc2626] text-white shadow-lg shadow-red-500/35 ring-4 ring-white"
                     : "w-6 h-6"
                 }`}
               >

@@ -313,21 +313,21 @@ export function AboutPageClient() {
       </section>
 
       {/* Timeline */}
-      <section className="section-spacing bg-slate-900 text-white relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-slate-600/15 rounded-full blur-[100px]" />
+      <section className="section-spacing bg-[#fef2f2] text-slate-900 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#dc2626]/5 rounded-full blur-[100px]" />
         <div className="container-custom relative z-10">
-          <SectionHeader badge="Our Journey" title="A Decade of Determined Service" subtitle="Every milestone is a story of lives changed, hope restored and communities empowered." className="mb-16 text-center" lightText />
+          <SectionHeader badge="Our Journey" title="A Decade of Determined Service" subtitle="Every milestone is a story of lives changed, hope restored and communities empowered." className="mb-16 text-center" />
           <div className="relative">
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-slate-700/60 md:-translate-x-px" />
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-red-200 md:-translate-x-px" />
             <div className="flex flex-col gap-12">
               {timeline.map((item, i) => (
                 <motion.div key={i} variants={fadeUp} initial="hidden" whileInView="show" custom={i * 0.1} viewport={{ once: true }}
                   className={`relative flex items-start gap-6 md:gap-0 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
-                  <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-orange-500 border-4 border-slate-900 -translate-x-1.5 md:-translate-x-2 mt-1.5 shadow-lg shadow-orange-500/40" />
+                  <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-[#dc2626] border-4 border-[#fef2f2] -translate-x-1.5 md:-translate-x-2 mt-1.5 shadow-lg shadow-red-500/40" />
                   <div className={`ml-12 md:ml-0 md:w-[45%] ${i % 2 === 0 ? "md:pr-16 md:text-right" : "md:pl-16"}`}>
-                    <span className="text-orange-400 font-black text-2xl">{item.year}</span>
-                    <h3 className="text-xl font-bold text-white mt-1 mb-2">{item.title}</h3>
-                    <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
+                    <span className="text-[#dc2626] font-black text-2xl">{item.year}</span>
+                    <h3 className="text-xl font-bold text-slate-900 mt-1 mb-2">{item.title}</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
                   </div>
                 </motion.div>
               ))}
