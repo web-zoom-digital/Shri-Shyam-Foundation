@@ -7,17 +7,16 @@ import { galleryImages, galleryCategories, GalleryCategory, GalleryImage } from 
 
 export function MasonryGallery() {
   const [activeCategory, setActiveCategory] = useState<GalleryCategory>("All")
-  const nonSpotlightImages = galleryImages.filter(img => !img.spotlight)
-  const [filteredImages, setFilteredImages] = useState<GalleryImage[]>(nonSpotlightImages)
+  const [filteredImages, setFilteredImages] = useState<GalleryImage[]>(galleryImages)
   
   // Lightbox State
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
 
   useEffect(() => {
     if (activeCategory === "All") {
-      setFilteredImages(nonSpotlightImages)
+      setFilteredImages(galleryImages)
     } else {
-      setFilteredImages(nonSpotlightImages.filter(img => img.categories.includes(activeCategory)))
+      setFilteredImages(galleryImages.filter(img => img.categories.includes(activeCategory)))
     }
   }, [activeCategory])
 

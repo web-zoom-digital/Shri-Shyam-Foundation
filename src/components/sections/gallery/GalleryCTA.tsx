@@ -10,9 +10,9 @@ export function GalleryCTA() {
     <section className="relative py-24 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
-          src="/images/live/IMG20260714115739-bOYlA.jpg"
+          src="/gallery/program-1.webp"
           alt="Background"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-fit"
         />
       </div>
 

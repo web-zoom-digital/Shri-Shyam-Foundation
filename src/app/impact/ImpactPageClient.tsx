@@ -123,7 +123,7 @@ export function ImpactPageClient() {
                   alt="Children receiving school support materials during an SSF education drive"
                   loading="eager"
                   decoding="async"
-                  className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" 
+                  className="w-full h-full transform hover:scale-105 transition-transform duration-700" 
                 />
               </div>
             </motion.div>

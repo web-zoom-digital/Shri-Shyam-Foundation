@@ -85,7 +85,7 @@ function AnimatedCounter({
 /* ─── Hero — image-first storytelling ─── */
 const heroSlides = [
   {
-    src: "/images/live/10.jpg.jpeg",
+    src: "/gallery/program-4.webp",
     alt: "Volunteers and a child placing fresh green fodder into a trough for cows under a thatched rural shelter at golden hour",
     caption: "Daily Accident occur in Road due to heavy Vechile",
     badge: "Gau Seva in Action",
@@ -112,7 +112,7 @@ const heroSlides = [
     desc: "This is what a cow donation looks like on the ground — a volunteer in an SSF shirt offering fresh produce, one animal at a time.",
   },
   {
-    src: "/images/live/9.jpg.jpeg",
+    src: "/gallery/program-7.webp",
     alt: "A volunteer crouching beside a resting brown-and-white calf under roadside trees, gently stroking its back",
     caption: "Quiet care for a young calf",
     badge: "Compassion Up Close",
@@ -130,7 +130,7 @@ const sevaPackages = [
     amount: 101,
     impact: "One simple meal for a cow in our care",
     detail: "A small beginning — fresh roti or produce offered with devotion.",
-    img: "/images/live/image-67.jpg",
+    img: "/gallery/program-8.webp",
     imgAlt: "SSF volunteer hand-feeding tomatoes to a white cow",
     imgFocus: "object-[center_20%]",
     icon: "🫓",
@@ -152,7 +152,7 @@ const sevaPackages = [
     amount: 251,
     impact: "Full-day fodder, water & basic care",
     detail: "Covers one rescued cow’s nutrition and care for a complete day.",
-    img: "/images/live/7.jpg.jpeg",
+    img: "/gallery/program-7.webp",
     imgAlt: "SSF volunteer offering a tomato to a black cow in an open field",
     imgFocus: "object-[center_22%]",
     icon: "🐄",
@@ -164,7 +164,7 @@ const sevaPackages = [
     amount: 501,
     impact: "Wound care, antiseptic & basic medicines",
     detail: "Supports veterinary dressing, pain relief and on-site treatment.",
-    img: "/images/live/8.jpg.jpeg",
+    img: "/gallery/treatment_Seva.webp",
     imgAlt:
       "Veterinarian in blue scrubs treating a wound on a white cow inside the shelter",
     imgFocus: "object-[center_28%]",
@@ -176,7 +176,7 @@ const sevaPackages = [
     amount: 1101,
     impact: "One month of fodder for one cow",
     detail: "Green fodder, dry grass and clean water across an entire month.",
-    img: "/images/live/9.jpg.jpeg",
+    img: "/gallery/program-9.webp",
     imgAlt: "Volunteer gently feeding a brown cow while a calf rests nearby",
     imgFocus: "object-[center_18%]",
     icon: "🌾",
@@ -188,7 +188,7 @@ const sevaPackages = [
     impact: "One month of milk, warmth & care for a calf",
     detail:
       "Bottle-feeding, nutrition and close monitoring for a rescued calf.",
-    img: "/images/live/image-67.jpg",
+    img: "/gallery/program-10.webp",
     imgAlt: "Caregiver bottle-feeding a young white calf lying on dry ground",
     imgFocus: "object-[center_35%]",
     icon: "🐮",
@@ -200,7 +200,7 @@ const sevaPackages = [
     impact: "Full month: food, shelter & medical cover",
     detail:
       "The most complete package — nutrition, shelter upkeep and treatment.",
-    img: "/images/live/10.jpg.jpeg",
+    img: "/gallery/adopt_cow.webp",
     imgAlt: "Large ventilated gaushala housing a herd of indigenous cows",
     imgFocus: "object-center",
     icon: "🏠",
@@ -211,7 +211,7 @@ const sevaPackages = [
     amount: 11001,
     impact: "Transport, emergency treatment & first-week care",
     detail: "Funds roadside or highway rescue, first aid and early recovery.",
-    img: "/images/live/7.jpg.jpeg",
+    img: "/gallery/emergency_rescue.webp",
     imgAlt:
       "Severely injured white cow lying on a road with a bleeding bandaged leg",
     imgFocus: "object-[center_40%]",
@@ -265,57 +265,57 @@ const careTimeline = [
     step: "01",
     title: "Rescue Call",
     desc: "We respond when someone reports an injured or abandoned cow on a road, highway or public space — and move the animal to safety.",
-    img: "/images/live/8.jpg.jpeg",
+    img: "/images/hero/cow-banner.png",
   },
   {
     step: "02",
     title: "First Medical Care",
     desc: "Wounds are cleaned, bandaged and assessed. Critical cases get veterinarian attention before anything else.",
-    img: "/images/live/9.jpg.jpeg",
+    img: "/gallery/treatment_Seva.webp",
   },
   {
     step: "03",
     title: "Daily Feeding",
     desc: "Green fodder, produce and clean water are provided by hand. Volunteers show up — they do not outsource care.",
-    img: "/images/live/image-67.jpg",
+    img: "/gallery/program-3.webp",
   },
   {
     step: "04",
     title: "Safe Shelter",
     desc: "Recovering cows rest under a large ventilated shed with the herd, tagged and monitored.",
-    img: "/images/live/10.jpg.jpeg",
+    img: "/gallery/adopt_cow.webp",
   },
   {
     step: "05",
     title: "Ongoing Check-ups",
     desc: "Vets listen with a stethoscope, track recovery and adjust treatment until the animal is stable.",
-    img: "/images/live/7.jpg.jpeg",
+    img: "/gallery/program-11.webp",
   },
   {
     step: "06",
     title: "Long-Term Protection",
     desc: "Cows that cannot return to the roads stay under our care — fed, treated and watched for as long as they need us.",
-    img: "/images/live/8.jpg.jpeg",
+    img: "/gallery/program-10.webp",
   },
 ];
 
 const galleryImages = [
   {
-    src: "/images/live/9.jpg.jpeg",
+    src: "/gallery/roadside_injury.png",
     alt: "Severely injured white cow on a paved road with a blood-soaked yellow bandage on its mangled rear leg",
     caption: "Roadside Injury — Waiting for Rescue",
     story:
       "This is the call we answer: an open wound on asphalt, and a life that cannot walk away.",
   },
   {
-    src: "/images/live/image-67.jpg",
+    src: "/gallery/highway_truck_rescue.png",
     alt: "Overturned yellow cattle truck on a highway with injured white cows lying on the road while responders hold rope",
     caption: "Highway Truck Accident Rescue",
     story:
       "When a cattle truck overturns, every minute matters. Rescue begins with rope, calm hands and urgent transport.",
   },
   {
-    src: "/images/live/10.jpg.jpeg",
+    src: "/gallery/head_injury.png",
     alt: "Brown cow inside a brick-floored shelter with a yellow head bandage stained with fresh blood",
     caption: "Head Injury — Under Shelter Care",
     story:
@@ -329,28 +329,28 @@ const galleryImages = [
       "Antiseptic, gauze and a steady hand — this is how donated medicines are used.",
   },
   {
-    src: "/images/live/8.jpg.jpeg",
+    src: "/gallery/treatment_Seva.webp",
     alt: "Animal healthcare worker wearing gloves using an orange stethoscope to examine a black-and-white cow",
     caption: "Health Check Inside the Shed",
     story:
       "Not every visit is an emergency. Regular check-ups keep the herd stable.",
   },
   {
-    src: "/images/live/9.jpg.jpeg",
+    src: "/gallery/program-9.webp",
     alt: "Wide view of a large steel-roofed gaushala filled with indigenous cows, many wearing yellow ear tags",
     caption: "Our Gaushala — Safe Haven",
     story:
       "Hundreds of cows under one ventilated roof. This is where donated shelter support goes.",
   },
   {
-    src: "/images/live/image-67.jpg",
+    src: "/gallery/program-11.webp",
     alt: "Hands bottle-feeding milk to a young white calf with a brown eye patch lying on dry earth",
     caption: "Bottle-Feeding a Rescued Calf",
     story:
       "Weak calves cannot stand for long. Milk, warmth and patience bring them back.",
   },
   {
-    src: "/images/live/10.jpg.jpeg",
+    src: "/gallery/program-3.webp",
     alt: "Young woman in a white T-shirt gently feeding a brown cow while a calf rests on sandy ground nearby",
     caption: "Volunteer Feeding Time",
     story:
@@ -577,7 +577,7 @@ export function CowDonationPageClient() {
                     key={currentSlide}
                     src={slide.src}
                     alt={slide.alt}
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-fit"
                     initial={{ opacity: 0.4, scale: 1.04 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0 }}
@@ -649,7 +649,7 @@ export function CowDonationPageClient() {
                   <img
                     src={selectedSeva.img}
                     alt={selectedSeva.imgAlt}
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-fit"
                   />
                 </div>
                 <div className="p-5 sm:p-6">
@@ -972,7 +972,7 @@ export function CowDonationPageClient() {
                       <img
                         src={item.img}
                         alt={item.imgAlt}
-                        className={`absolute inset-0 h-full w-full object-cover ${item.imgFocus || "object-center"} group-hover:scale-[1.03] transition-transform duration-500`}
+                        className={`absolute inset-0 h-full w-full object-fit ${item.imgFocus || "object-center"} group-hover:scale-[1.03] transition-transform duration-500`}
                       />
                       {item.popular && (
                         <span className="absolute top-3 left-3 z-10 bg-orange-500 text-white text-[10px] font-bold px-2 py-1 rounded-full">
@@ -1075,7 +1075,7 @@ export function CowDonationPageClient() {
                 <img
                   src={img.src}
                   alt={img.alt}
-                  className="w-full h-44 sm:h-52 object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-50 sm:h-52 object-fit group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4">
@@ -1145,7 +1145,7 @@ export function CowDonationPageClient() {
                 className="bg-white border-2 border-green-100 rounded-2xl overflow-hidden hover:border-green-300 transition-colors"
               >
                 <div className="relative h-42">
-                  <img src={step.img} alt="" className="w-full h-full " />
+                  <img src={step.img} alt="" className="w-full h-full object-fit" />
                   <span className="absolute top-3 left-3 w-10 h-10 rounded-xl bg-green-700 text-white font-black text-sm flex items-center justify-center shadow-lg">
                     {step.step}
                   </span>

@@ -21,7 +21,7 @@ export function GalleryHero() {
         <img
           src="/images/live/Untitled-design-30.jpg"
           alt="Shri Shyam Foundation Gallery"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-fit"
         />
         <div className="absolute inset-0 bg-black/40" />
       </div>

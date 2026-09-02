@@ -61,7 +61,7 @@ export function CategorySubGallery({
               <img
                 src={image.src}
                 alt={image.alt}
-                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out"
+                className="w-full h-full  transform group-hover:scale-110 transition-transform duration-700 ease-in-out"
                 loading="lazy"
               />
               
