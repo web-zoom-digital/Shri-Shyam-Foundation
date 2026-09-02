@@ -669,7 +669,7 @@ export function CowDonationPageClient() {
               <div className="lg:col-span-3 p-4 sm:p-8 lg:p-10">
                 <div className="flex items-start justify-between gap-4 mb-5 sm:mb-6">
                   <div>
-                    <h2 className="text-xl sm:text-2xl font-extrabold text-green-950">
+                    <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900">
                       Choose Your Gau Seva
                     </h2>
                     <p className="text-slate-500 text-xs sm:text-sm mt-1">
@@ -688,10 +688,9 @@ export function CowDonationPageClient() {
                       onClick={() => setFrequency(f)}
                       className={`flex-1 py-2.5 rounded-full text-sm font-bold transition-all ${
                         frequency === f
-                          ? "bg-green-700 text-white shadow-md"
-                          : "text-slate-900 hover:text-slate-900"
+                          ? "bg-[#dc2626] text-white shadow-md shadow-red-500/20"
+                          : "text-slate-700 hover:text-[#dc2626]"
                       }`}
-                      style={frequency !== f ? { color: "black" } : {}}
                     >
                       {f === "one-time" ? "One-Time" : "Monthly"}
                     </button>
@@ -711,8 +710,8 @@ export function CowDonationPageClient() {
                         onClick={() => selectAmount(amount)}
                         className={`relative py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl font-black text-[11px] sm:text-base transition-all border-2 ${
                           active
-                            ? "bg-green-700 text-white border-green-700 shadow-lg shadow-green-700/25 scale-[1.02]"
-                            : "bg-white text-slate-800 border-slate-200 hover:border-green-400"
+                            ? "bg-[#dc2626] text-white border-[#dc2626] shadow-lg shadow-red-500/25 scale-[1.02]"
+                            : "bg-white text-slate-800 border-slate-200 hover:border-red-400"
                         }`}
                         style={!active ? { color: "black" } : {}}
                       >
@@ -733,7 +732,7 @@ export function CowDonationPageClient() {
                     <button
                       type="button"
                       aria-label="Decrease amount"
-                      className="w-10 h-10 flex items-center justify-center text-slate-500 hover:text-green-700"
+                      className="w-10 h-10 flex items-center justify-center text-slate-500 hover:text-[#dc2626]"
                       onClick={() => {
                         const next = Math.max(51, finalAmount - 50);
                         selectAmount(next);
@@ -744,7 +743,7 @@ export function CowDonationPageClient() {
                     <button
                       type="button"
                       aria-label="Increase amount"
-                      className="w-10 h-10 flex items-center justify-center text-slate-500 hover:text-green-700"
+                      className="w-10 h-10 flex items-center justify-center text-slate-500 hover:text-[#dc2626]"
                       onClick={() => selectAmount(finalAmount + 50)}
                     >
                       <Plus className="w-4 h-4" />
@@ -769,7 +768,7 @@ export function CowDonationPageClient() {
                           if (match) setSelectedSeva(match);
                         }
                       }}
-                      className="w-full pl-9 pr-4 py-3 rounded-2xl border-2 border-slate-200 bg-white text-slate-900 font-bold focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-green-600"
+                      className="w-full pl-9 pr-4 py-3 rounded-2xl border-2 border-slate-200 bg-white text-slate-900 font-bold focus:outline-none focus:ring-2 focus:ring-[#dc2626] focus:border-[#dc2626]"
                     />
                   </div>
                 </div>
@@ -877,7 +876,7 @@ export function CowDonationPageClient() {
                   type="button"
                   disabled={finalAmount <= 0 || isProcessing}
                   onClick={goDonate}
-                  className="w-full rounded-full h-14 font-black text-base bg-green-700 hover:bg-green-800 border-0 shadow-xl shadow-green-700/25 text-white"
+                  className="w-full rounded-full h-14 font-black text-base bg-[#dc2626] hover:bg-[#b91c1c] border-0 shadow-xl shadow-red-500/25 text-white"
                 >
                   {isProcessing
                     ? "Processing..."
@@ -997,7 +996,7 @@ export function CowDonationPageClient() {
                       type="button"
                       onClick={() => donateSevaDirect(item)}
                       disabled={isProcessing}
-                      className="w-full rounded-xl h-11 font-bold bg-slate-600 hover:bg-slate-500 text-white border-0 shadow-md shadow-slate-600/20"
+                      className="w-full rounded-xl h-11 font-bold bg-[#dc2626] hover:bg-[#b91c1c] text-white border-0 shadow-md shadow-red-500/20"
                     >
                       {isProcessing && selectedSeva.id === item.id
                         ? "Processing..."
