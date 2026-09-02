@@ -185,18 +185,18 @@ export function ImpactPageClient() {
       </section>
 
       {/* Donation Impact Calculator */}
-      <section className="section-spacing bg-slate-900 text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-orange-500/10 rounded-full blur-[100px]" />
+      <section className="section-spacing bg-[#fef2f2] text-slate-900 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#dc2626]/10 rounded-full blur-[100px]" />
         <div className="container-custom relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}>
-              <span className="text-orange-400 text-sm font-bold tracking-widest uppercase block mb-3">Donation Impact</span>
-              <h2 className="text-4xl font-extrabold text-white mb-6 leading-tight">Your Money Does<br />Extraordinary Things</h2>
-              <p className="text-slate-400 leading-relaxed mb-8">
+              <span className="text-[#dc2626] text-sm font-bold tracking-widest uppercase block mb-3">Donation Impact</span>
+              <h2 className="text-4xl font-extrabold text-slate-900 mb-6 leading-tight">Your Money Does<br />Extraordinary Things</h2>
+              <p className="text-slate-600 leading-relaxed mb-8">
                 Every gift below uses the same amounts you see on Home and Donate — so the impact story never changes from page to page.
               </p>
               <Link href="/donate">
-                <Button className="bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-full px-10 h-14 text-base border-0 shadow-xl">
+                <Button className="bg-[#dc2626] hover:bg-[#b91c1c] text-white font-bold rounded-full px-10 h-14 text-base border-0 shadow-xl">
                   Donate Now <HandCoins className="w-4 h-4 ml-2" />
                 </Button>
               </Link>
@@ -204,16 +204,16 @@ export function ImpactPageClient() {
             <div className="space-y-3">
               {donationImpact.map((d, i) => (
                 <motion.div key={d.amount} variants={fadeUp} initial="hidden" whileInView="show" custom={i * 0.08} viewport={{ once: true }}
-                  className="flex items-center gap-4 bg-white/5 border border-white/10 p-5 rounded-2xl hover:bg-white/10 transition-colors group">
+                  className="flex items-center gap-4 bg-white border border-red-100 p-5 rounded-2xl hover:-translate-y-1 hover:shadow-lg hover:shadow-red-500/10 shadow-sm transition-all group">
                   <div className="w-20 shrink-0 text-center">
-                    <span className="text-lg font-black text-orange-400">{d.amount}</span>
+                    <span className="text-lg font-black text-[#dc2626]">{d.amount}</span>
                   </div>
-                  <div className="w-px h-10 bg-white/10" />
+                  <div className="w-px h-10 bg-red-100" />
                   <div className="flex-1 flex items-center justify-between gap-3">
-                    <p className="text-slate-300 text-sm font-medium group-hover:text-white transition-colors">{d.desc}</p>
+                    <p className="text-slate-700 text-sm font-medium group-hover:text-slate-900 transition-colors">{d.desc}</p>
                     <Link
                       href={d.href}
-                      className="shrink-0 text-orange-400 text-xs font-bold hover:text-orange-300 whitespace-nowrap"
+                      className="shrink-0 text-[#dc2626] text-xs font-bold hover:text-[#b91c1c] whitespace-nowrap"
                     >
                       Donate →
                     </Link>

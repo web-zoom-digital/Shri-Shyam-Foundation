@@ -9,17 +9,17 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-slate-600 text-white hover:bg-slate-700 shadow-[0_4px_15px_rgba(37,99,235,0.3)] hover:shadow-[0_8px_25px_rgba(37,99,235,0.4)] hover:-translate-y-0.5",
+          "bg-[#dc2626] text-white hover:bg-[#b91c1c] shadow-[0_4px_15px_rgba(220,38,38,0.3)] hover:shadow-[0_8px_25px_rgba(220,38,38,0.4)] hover:-translate-y-0.5",
         primary:
-          "bg-gradient-to-r from-slate-600 to-slate-500 text-white hover:from-slate-700 hover:to-slate-600 shadow-[0_4px_15px_rgba(37,99,235,0.3)] hover:shadow-[0_8px_25px_rgba(37,99,235,0.4)] hover:-translate-y-0.5",
+          "bg-gradient-to-r from-[#dc2626] to-[#ef4444] text-white hover:from-[#b91c1c] hover:to-[#dc2626] shadow-[0_4px_15px_rgba(220,38,38,0.3)] hover:shadow-[0_8px_25px_rgba(220,38,38,0.4)] hover:-translate-y-0.5",
         secondary:
-          "bg-slate-500 text-white hover:bg-slate-600 shadow-[0_4px_15px_rgba(16,185,129,0.3)] hover:shadow-[0_8px_25px_rgba(16,185,129,0.4)] hover:-translate-y-0.5",
+          "bg-[#b91c1c] text-white hover:bg-[#991b1b] shadow-[0_4px_15px_rgba(220,38,38,0.3)] hover:shadow-[0_8px_25px_rgba(220,38,38,0.4)] hover:-translate-y-0.5",
         warm:
           "bg-gradient-to-r from-orange-500 to-amber-500 text-white hover:from-orange-600 hover:to-amber-600 shadow-[0_4px_15px_rgba(249,115,22,0.3)] hover:shadow-[0_8px_25px_rgba(249,115,22,0.4)] hover:-translate-y-0.5",
         outline:
-          "border-2 border-slate-600 text-slate-600 hover:bg-slate-600 hover:text-white hover:-translate-y-0.5",
-        ghost: "hover:bg-slate-100 text-slate-600 hover:text-slate-900",
-        link: "text-slate-600 underline-offset-4 hover:underline",
+          "border-2 border-[#dc2626] text-[#dc2626] hover:bg-[#dc2626] hover:text-white hover:-translate-y-0.5",
+        ghost: "hover:bg-[#fef2f2] text-[#dc2626] hover:text-[#b91c1c]",
+        link: "text-[#dc2626] underline-offset-4 hover:underline",
         whatsapp: "bg-[#25D366] text-white hover:bg-[#128C7E] shadow-[0_4px_15px_rgba(37,211,102,0.3)] hover:shadow-[0_8px_25px_rgba(37,211,102,0.4)] hover:-translate-y-0.5",
       },
       size: {

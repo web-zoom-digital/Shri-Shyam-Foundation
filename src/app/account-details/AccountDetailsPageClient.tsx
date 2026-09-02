@@ -232,20 +232,20 @@ export function AccountDetailsPageClient() {
                 </p>
                 <div className="mx-auto mb-5 w-full max-w-[220px] sm:max-w-[240px] rounded-2xl border border-slate-200 bg-white p-2.5 shadow-sm overflow-hidden">
                   <img
-                    src="/images/upi-qr.png"
-                    alt="Shri Shyam Foundation UPI QR Code — shrishyamfoundation2506@aubank"
+                    src="/images/yesbank-qr.jpg"
+                    alt="Shri Shyam Foundation UPI QR Code — yespay.bizs.biz226421.ter1@yesbankltd"
                     width={317}
                     height={368}
                     className="block w-full h-auto max-w-full object-contain"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src =
-                        "https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=upi://pay?pa=shrishyamfoundation2506@aubank%26pn=Shri%20Shyam%20Foundation%26cu=INR"
+                        "https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=upi://pay?pa=yespay.bizs.biz226421.ter1@yesbankltd%26pn=Shri%20Shyam%20Foundation%26cu=INR"
                     }}
                   />
                 </div>
                 <p className="font-bold text-slate-900 text-sm mb-1">Scan with any UPI app</p>
                 <p className="text-slate-500 text-xs mb-1 break-all px-1">
-                  UPI ID: shrishyamfoundation2506@aubank
+                  UPI ID: yespay.bizs.biz226421.ter1@yesbankltd
                 </p>
                 <p className="text-slate-400 text-[11px] sm:text-xs">PhonePe · Google Pay · Paytm · BHIM</p>
                 <div className="mt-4 flex flex-wrap gap-2 justify-center">

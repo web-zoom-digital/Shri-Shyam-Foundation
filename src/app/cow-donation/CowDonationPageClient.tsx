@@ -501,31 +501,31 @@ export function CowDonationPageClient() {
   return (
     <div className="bg-white w-full max-w-full overflow-x-clip">
       {/* ── HERO ── */}
-      <section className="min-h-0 lg:min-h-[88vh] flex items-center bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-10 overflow-hidden">
+      <section className="min-h-0 lg:min-h-[88vh] flex items-center bg-[#fef2f2] pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-10 overflow-hidden">
         <div className="container-custom w-full">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
             <div className="flex flex-col items-center text-center lg:items-start lg:text-left z-10 order-2 lg:order-1">
-              <nav className="flex items-center justify-center lg:justify-start gap-2 text-sm text-slate-300 mb-4 sm:mb-6">
-                <Link href="/" className="hover:text-white transition-colors">
+              <nav className="flex items-center justify-center lg:justify-start gap-2 text-sm text-slate-500 mb-4 sm:mb-6">
+                <Link href="/" className="hover:text-[#dc2626] transition-colors">
                   Home
                 </Link>
                 <span>/</span>
-                <span className="text-white font-semibold">Cow Donation</span>
+                <span className="text-slate-900 font-semibold">Cow Donation</span>
               </nav>
 
               <div className="w-full min-h-0 sm:min-h-[200px] flex flex-col items-center lg:items-start">
-                <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/10 border border-slate-400/40 mb-4 sm:mb-5">
+                <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white border border-red-200 shadow-sm mb-4 sm:mb-5">
                   <span className="text-base">🐄</span>
-                  <span className="text-xs sm:text-sm font-semibold text-slate-300">
+                  <span className="text-xs sm:text-sm font-semibold text-[#dc2626]">
                     {slide.badge}
                   </span>
                 </div>
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] font-extrabold text-white leading-[1.12] mb-4 sm:mb-5 tracking-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] font-extrabold text-slate-900 leading-[1.12] mb-4 sm:mb-5 tracking-tight">
                   {slide.title}
                   <br />
-                  <span className="text-slate-400">{slide.highlight}</span>
+                  <span className="text-[#dc2626]">{slide.highlight}</span>
                 </h1>
-                <p className="text-sm sm:text-base md:text-lg text-slate-100/85 mb-6 sm:mb-8 max-w-xl leading-relaxed mx-auto lg:mx-0">
+                <p className="text-sm sm:text-base md:text-lg text-slate-600 mb-6 sm:mb-8 max-w-xl leading-relaxed mx-auto lg:mx-0">
                   {slide.desc}
                 </p>
               </div>
@@ -535,9 +535,9 @@ export function CowDonationPageClient() {
                   (badge) => (
                     <span
                       key={badge}
-                      className="inline-flex items-center gap-1.5 bg-white/10 border border-slate-400/30 text-white text-xs font-bold px-3 py-1.5 rounded-full"
+                      className="inline-flex items-center gap-1.5 bg-white border border-red-100 text-slate-700 text-xs font-bold px-3 py-1.5 rounded-full shadow-sm"
                     >
-                      <CheckCircle2 className="w-3.5 h-3.5 text-slate-400" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#dc2626]" />
                       {badge}
                     </span>
                   ),
@@ -548,7 +548,7 @@ export function CowDonationPageClient() {
                 <a href="#donate-widget" className="w-full sm:w-auto">
                   <Button
                     size="lg"
-                    className="w-full sm:w-auto rounded-full h-14 px-8 text-base font-bold bg-slate-600 hover:bg-slate-500 border-0 shadow-2xl shadow-slate-600/40 text-white"
+                    className="w-full sm:w-auto rounded-full h-14 px-8 text-base font-bold bg-[#dc2626] hover:bg-[#b91c1c] border-0 shadow-2xl shadow-red-500/40 text-white"
                   >
                     Support Cow Care <HandCoins className="w-4 h-4 ml-2" />
                   </Button>

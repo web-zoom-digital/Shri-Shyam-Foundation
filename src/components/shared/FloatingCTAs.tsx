@@ -51,7 +51,7 @@ export function FloatingCTAs() {
           {/* Phone Call (Hidden on mobile where bottom nav handles it) */}
           <a
             href="tel:+919990145555"
-            className="hidden lg:flex w-12 h-12 rounded-full bg-slate-600 text-white shadow-xl items-center justify-center hover:scale-110 transition-transform hover:shadow-2xl hover:shadow-slate-600/40"
+            className="hidden lg:flex w-12 h-12 rounded-full bg-[#dc2626] text-white shadow-xl items-center justify-center hover:scale-110 transition-transform hover:shadow-2xl hover:shadow-red-500/40"
             aria-label="Call Us"
           >
             <Phone className="w-5 h-5 fill-white" />

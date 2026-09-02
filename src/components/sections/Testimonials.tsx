@@ -25,9 +25,9 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="section-spacing bg-slate-900 text-white relative overflow-hidden">
+    <section className="section-spacing bg-[#fef2f2] text-slate-900 relative overflow-hidden">
       {/* Decorative */}
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 mix-blend-overlay" />
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay" />
       
       <div className="container-custom relative z-10">
         <SectionHeader 
@@ -41,7 +41,7 @@ export function Testimonials() {
           {testimonials.map((t, idx) => (
             <motion.div
               key={t.name}
-              className="bg-white/5 border border-white/10 backdrop-blur-md p-8 rounded-[2rem] hover:bg-white/10 transition-colors duration-300"
+              className="bg-white border border-red-100 shadow-xl shadow-red-500/5 p-8 rounded-[2rem] hover:-translate-y-2 hover:shadow-2xl hover:shadow-red-500/10 transition-all duration-300"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
@@ -52,16 +52,16 @@ export function Testimonials() {
                   <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                 ))}
               </div>
-              <p className="text-slate-300 leading-relaxed mb-8 text-sm">
+              <p className="text-slate-600 leading-relaxed mb-8 text-sm">
                 "{t.text}"
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-slate-500 to-slate-500 flex items-center justify-center font-bold text-white shadow-inner">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#dc2626] to-[#ef4444] flex items-center justify-center font-bold text-white shadow-inner">
                   {t.name.charAt(0)}
                 </div>
                 <div>
-                  <h5 className="font-bold text-white text-sm">{t.name}</h5>
-                  <p className="text-xs text-slate-400">{t.role}</p>
+                  <h5 className="font-bold text-slate-900 text-sm">{t.name}</h5>
+                  <p className="text-xs text-[#dc2626]">{t.role}</p>
                 </div>
               </div>
             </motion.div>

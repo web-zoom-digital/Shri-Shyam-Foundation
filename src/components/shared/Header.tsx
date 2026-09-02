@@ -97,7 +97,7 @@ export function Header() {
           className={`hidden md:flex w-full transition-all duration-500 ${
             isScrolled
               ? "h-0 opacity-0 py-0 overflow-hidden border-b-0"
-              : "bg-slate-600 text-white h-auto py-2 opacity-100"
+              : "bg-[#dc2626] text-white h-auto py-2 opacity-100"
           }`}
         >
           <div className="w-full px-6 md:px-10 lg:px-12 xl:px-16 max-w-[1920px] mx-auto flex items-center justify-between text-[13px] font-medium tracking-wide">
@@ -160,12 +160,12 @@ export function Header() {
                   key={link.name}
                   href={link.href}
                   className={`relative shrink-0 text-[14px] xl:text-[15px] 2xl:text-base font-bold transition-colors py-2 group whitespace-nowrap ${
-                    active ? "text-slate-900" : "text-slate-900 hover:text-slate-600"
+                    active ? "text-[#dc2626]" : "text-slate-900 hover:text-[#dc2626]"
                   }`}
                 >
                   {link.name}
                   <span
-                    className={`absolute left-0 bottom-0 h-0.5 bg-slate-600 transition-all duration-300 rounded-full ${
+                    className={`absolute left-0 bottom-0 h-0.5 bg-[#dc2626] transition-all duration-300 rounded-full ${
                       active ? "w-full" : "w-0 group-hover:w-full"
                     }`}
                   />
@@ -185,7 +185,7 @@ export function Header() {
             <Link href="/donate">
               <Button
                 variant="primary"
-                className="rounded-full shadow-lg shadow-slate-500/25 hover:shadow-slate-500/40 hover:-translate-y-0.5 transition-all duration-300 px-6 xl:px-8 py-5 xl:py-6 h-11 text-sm font-bold"
+                className="rounded-full shadow-lg shadow-red-500/25 hover:shadow-red-500/40 hover:-translate-y-0.5 transition-all duration-300 px-6 xl:px-8 py-5 xl:py-6 h-11 text-sm font-bold"
               >
                 Donate Now
               </Button>
@@ -294,7 +294,7 @@ export function Header() {
                             <span
                               className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-colors ${
                                 active
-                                  ? "bg-slate-600 text-white shadow-md shadow-slate-600/25"
+                                  ? "bg-[#dc2626] text-white shadow-md shadow-red-500/25"
                                   : "bg-slate-50 text-slate-700 group-hover:bg-slate-100"
                               }`}
                             >
@@ -357,8 +357,8 @@ export function Header() {
                               className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-colors ${
                                 active
                                   ? isCow
-                                    ? "bg-slate-600 text-white shadow-md shadow-slate-600/25"
-                                    : "bg-slate-600 text-white shadow-md shadow-slate-600/25"
+                                    ? "bg-[#dc2626] text-white shadow-md shadow-red-500/25"
+                                    : "bg-[#dc2626] text-white shadow-md shadow-red-500/25"
                                   : isCow
                                     ? "bg-slate-50 text-slate-700 group-hover:bg-slate-100"
                                     : "bg-slate-50 text-slate-700 group-hover:bg-slate-100"
@@ -408,7 +408,7 @@ export function Header() {
                   <Link href="/cow-donation" onClick={() => setMobileMenuOpen(false)}>
                     <Button
                       size="lg"
-                      className="w-full rounded-2xl border-0 bg-slate-600 text-white h-12 text-sm font-bold shadow-lg shadow-slate-600/25 hover:bg-slate-500"
+                      className="w-full rounded-2xl border-0 bg-[#b91c1c] text-white h-12 text-sm font-bold shadow-lg shadow-red-500/25 hover:bg-[#991b1b]"
                     >
                       <GiCow className="mr-1.5 h-[18px] w-[18px]" />
                       Cow Seva
@@ -418,7 +418,7 @@ export function Header() {
                     <Button
                       variant="primary"
                       size="lg"
-                      className="w-full rounded-2xl border-0 bg-gradient-to-r from-slate-700 to-slate-500 text-white h-12 text-sm font-bold shadow-lg shadow-slate-600/25"
+                      className="w-full rounded-2xl border-0 bg-gradient-to-r from-[#dc2626] to-[#ef4444] text-white h-12 text-sm font-bold shadow-lg shadow-red-500/25"
                     >
                       Donate
                       <HandCoins className="ml-1.5 h-4 w-4" />
@@ -429,7 +429,7 @@ export function Header() {
                 <div className="mt-3.5 flex items-center justify-between gap-3">
                   <a
                     href="tel:+919990145555"
-                    className="flex flex-1 items-center justify-center gap-2 rounded-full border border-slate-200 bg-slate-50 py-2.5 text-xs font-bold text-slate-600 transition-colors hover:border-slate-200 hover:bg-white hover:text-slate-700"
+                    className="flex flex-1 items-center justify-center gap-2 rounded-full border border-slate-200 bg-slate-50 py-2.5 text-xs font-bold text-[#dc2626] transition-colors hover:border-slate-300 hover:bg-white hover:text-[#b91c1c]"
                   >
                     <Phone className="h-3.5 w-3.5" />
                     Call Helpline
