@@ -10,7 +10,7 @@ export function GalleryCTA() {
     <section className="relative py-24 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
-          src="/images/live/IMG20260714115739-bOYlA.jpg"
+          src="/images/live/7.jpg.jpeg"
           alt="Background"
           className="w-full h-full object-cover"
         />

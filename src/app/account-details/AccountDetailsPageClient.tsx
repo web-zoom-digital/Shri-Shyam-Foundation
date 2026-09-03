@@ -94,7 +94,7 @@ export function AccountDetailsPageClient() {
       <section className="relative min-h-[60vh] sm:min-h-[70vh] flex items-center pt-24 sm:pt-36 lg:pt-56 pb-12 sm:pb-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img src="/images/live/6.jpg.jpeg" alt="Shri Shyam Foundation team" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/30" />
+          <div className="absolute inset-0 bg-black/60" />
         </div>
         {/* Decorative blobs */}
         <motion.div className="absolute bottom-0 left-0 w-[280px] sm:w-[480px] h-[180px] sm:h-[300px] bg-orange-400/15 rounded-full blur-[120px] -translate-x-1/4"

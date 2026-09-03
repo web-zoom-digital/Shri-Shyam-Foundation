@@ -9,11 +9,11 @@ import { Button } from "@/components/ui/Button"
 import { ArrowRight } from "lucide-react"
 
 const images = [
-  { src: "/gallery/program-1.webp", alt: "Volunteers serving hundreds of individuals from large community pots during an SSF mega food drive" },
-  { src: "/gallery/program-2.webp", alt: "SSF volunteer handing a foil-packaged hot meal to a beneficiary on the street" },
-  { src: "/gallery/program-3.webp", alt: "Man distributing colourful toys to young boys lined up during an SSF children's outreach event" },
-  { src: "/gallery/program-4.webp", alt: "Woman gently petting and comforting a resting calf as part of SSF's cow welfare programme" },
-  { src: "/gallery/program-5.webp", alt: "SSF volunteer carefully bottle-feeding a weak white calf lying on the ground" },
+  { src: "/gallery/program-3.webp", alt: "Volunteers serving hundreds of individuals from large community pots during an SSF mega food drive" },
+  { src: "/images/live/image-2026-05-27T162851.033.jpg", alt: "SSF volunteer handing a foil-packaged hot meal to a beneficiary on the street" },
+  { src: "/gallery/program-2.webp", alt: "Man distributing colourful toys to young boys lined up during an SSF children's outreach event" },
+  { src: "/gallery/program-9.webp", alt: "Woman gently petting and comforting a resting calf as part of SSF's cow welfare programme" },
+  { src: "/gallery/treatment_Seva.webp", alt: "SSF volunteer carefully bottle-feeding a weak white calf lying on the ground" },
 ]
 
 export function GalleryPreview() {
