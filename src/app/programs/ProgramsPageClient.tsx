@@ -23,7 +23,7 @@ const programs = [
     tagline: "Serving Hot Meals with Dignity",
     desc: "We believe nobody should go to bed hungry. Every single day, our dedicated volunteers prepare and serve fresh, warm, and nutritious meals to daily wage earners, elderly individuals, and families struggling to make ends meet. It's more than just food—it's a plate of hope.",
     impact: "5M+ plates of hope served",
-    image: "/gallery/program-1.webp",
+    image: "/gallery/program-5.webp",
     who: ["Families below poverty line", "Daily wage labourers", "Migrant workers", "Homeless individuals", "Elderly persons living alone"],
     highlights: ["Hot meals twice daily", "Nutritionally balanced menus", "FSSAI compliant kitchen", "Free home delivery for bedridden patients"],
   },
@@ -37,7 +37,7 @@ const programs = [
     tagline: "Healthcare Access for Those Left Out",
     desc: "We raise funds and organise support so underserved families can reach doctors, medicines and basic check-ups. Until we publish new medical-camp photos, our community sessions and team visits represent this ongoing healthcare mission.",
     impact: "25,000+ lives touched",
-    image: "/gallery/program-2.webp",
+    image: "/images/live/medical_support.jpg",
     who: ["Rural communities", "Urban slum dwellers", "Senior citizens", "Pregnant women", "Children under 5"],
     highlights: ["Community health awareness sessions", "Support for medicines and check-ups", "Specialist referral guidance", "Partnerships with local doctors"],
   },
@@ -51,7 +51,7 @@ const programs = [
     tagline: "Books, Bags, and a Brighter Future",
     desc: "Every child deserves to walk into a classroom ready to learn. We distribute school stationery kits, textbooks, uniforms and bags directly to children from families that cannot afford them. We also run awareness sessions at government schools to keep children engaged and motivated.",
     impact: "3,200+ futures brightened",
-    image: "/images/live/Untitled-design-31.jpg",
+    image: "/gallery/program-1.webp",
     who: ["Children from BPL families", "First-generation learners", "Girl children in rural areas", "Children of daily wage earners"],
     highlights: ["Free stationery and book kits", "Free school uniforms and bags", "Annual scholarship programme", "School awareness and motivation sessions"],
   },
@@ -65,7 +65,7 @@ const programs = [
     tagline: "Warmth Wrapped in Love",
     desc: "A warm jacket or a clean shirt can bring a priceless smile. Through our regular donation drives, we collect, wash, and respectfully distribute gently used clothing to homeless individuals and vulnerable families, ensuring they face harsh weather with dignity.",
     impact: "1,50,000+ smiles delivered",
-    image: "/images/live/medical_support.jpg",
+    image: "/images/hero/clothes-banner.png",
     who: ["Homeless individuals", "Disaster-affected families", "Children in orphanages", "Elderly in old-age homes"],
     highlights: ["Winter clothing drives in November", "All clothing hygienically washed", "Distribution in 12 districts", "Special winter kits for children"],
   },
@@ -100,11 +100,11 @@ const programs = [
 ]
 
 const heroImages = [
-  { src: "/gallery/program-1.webp", alt: "Volunteer serving hot meals from large pots to people waiting in an outdoor queue" },
-  { src: "/gallery/program-2.webp", alt: "Volunteers serving a large indoor community meal to families seated on the floor" },
-  { src: "/gallery/program-3.webp", alt: "Foundation representatives speaking with schoolchildren seated on the floor during a classroom session" },
-  { src: "/gallery/program-4.webp", alt: "Volunteer handing folded garments to a schoolgirl during a clothing donation visit" },
-  { src: "/gallery/program-5.webp", alt: "Children and volunteers celebrating together at a Vidyapeeth community outreach event" },
+  { src: "/gallery/program-3.webp", alt: "Volunteer serving hot meals from large pots to people waiting in an outdoor queue" },
+  { src: "/gallery/program-5.webp", alt: "Volunteers serving a large indoor community meal to families seated on the floor" },
+  { src: "/gallery/program-1.webp", alt: "Foundation representatives speaking with schoolchildren seated on the floor during a classroom session" },
+  { src: "/images/hero/clothes-banner.png", alt: "Volunteer handing folded garments to a schoolgirl during a clothing donation visit" },
+  { src: "/gallery/program-2.webp", alt: "Children and volunteers celebrating together at a Vidyapeeth community outreach event" },
 ]
 
 export function ProgramsPageClient() {
@@ -303,7 +303,7 @@ export function ProgramsPageClient() {
 
             <div>
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl shadow-slate-900/10 mb-6 border-4 border-white">
-                <img src={active.image} alt={active.title} className="w-full h-full object-fit transform hover:scale-105 transition-transform duration-700" />
+                <img src={active.image} alt={active.title} className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="premium-card rounded-2xl p-6">
                 <h3 className="font-bold text-slate-900 mb-4">Who We Serve</h3>
@@ -330,7 +330,7 @@ export function ProgramsPageClient() {
               <motion.div key={p.id} variants={fadeUp} initial="hidden" whileInView="show" custom={i * 0.1} viewport={{ once: true }}
                 className="premium-card rounded-2xl group cursor-pointer overflow-hidden flex flex-col" onClick={() => { setActiveProgram(p.id); window.scrollTo({ top: 0, behavior: "smooth" }) }}>
                 <div className="aspect-[16/10] w-full overflow-hidden relative border-b border-slate-100">
-                  <img src={p.image} alt={p.title} className="w-full h-full object-fit  group-hover:scale-105 " />
+                  <img src={p.image} alt={p.title} className="w-full h-full object-cover group-hover:scale-105" />
                   <div className="absolute top-4 left-4">
                     <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${p.color} flex items-center justify-center shadow-lg`}>
                       <p.icon className="w-5 h-5 text-white" />

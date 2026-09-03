@@ -13,10 +13,10 @@ import { Button } from "@/components/ui/Button";
 import Image from "next/image";
 
 const carouselImages = [
+  "/gallery/program-5.webp",
+  "/gallery/program-9.webp",
   "/gallery/program-1.webp",
-  "/gallery/program-2.webp",
-  "/gallery/program-3.webp",
-  "/gallery/program-4.webp",
+  "/gallery/program-6.webp",
 ];
 
 export function Transparency() {

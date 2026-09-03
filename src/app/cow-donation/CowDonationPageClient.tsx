@@ -1144,7 +1144,7 @@ export function CowDonationPageClient() {
                 className="bg-white border-2 border-green-100 rounded-2xl overflow-hidden hover:border-green-300 transition-colors"
               >
                 <div className="relative h-42">
-                  <img src={step.img} alt="" className="w-full h-full object-fit" />
+                  <img src={step.img} alt="" className="w-full h-full object-cover" />
                   <span className="absolute top-3 left-3 w-10 h-10 rounded-xl bg-green-700 text-white font-black text-sm flex items-center justify-center shadow-lg">
                     {step.step}
                   </span>

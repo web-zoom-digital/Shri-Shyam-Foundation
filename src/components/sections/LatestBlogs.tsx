@@ -13,7 +13,7 @@ const stories = [
     summary:
       "Volunteers cook and serve foil-packed meals to people waiting in line — not a staged shoot, just the work we do across Delhi NCR and UP.",
     category: "Food Seva",
-    image: "/gallery/program-1.webp",
+    image: "/gallery/program-5.webp",
     href: "/programs",
     cta: "See food programmes",
   },
@@ -22,7 +22,7 @@ const stories = [
     summary:
       "Bags, notebooks and stationery reach government-school children through our education support drives — so learning is not paused for want of basic supplies.",
     category: "Education",
-    image: "/gallery/program-2.webp",
+    image: "/gallery/program-1.webp",
     href: "/impact",
     cta: "View education impact",
   },
@@ -31,7 +31,7 @@ const stories = [
     summary:
       "Injured or abandoned cows are brought in for treatment, daily feeding and safe shelter at our gaushala — supported by Gau Seva donations.",
     category: "Cow Welfare",
-    image: "/gallery/program-4.webp",
+    image: "/gallery/program-9.webp",
     href: "/cow-donation",
     cta: "Support Gau Seva",
   },
