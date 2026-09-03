@@ -53,7 +53,7 @@ export function UpcomingEvents() {
             </Button>
           </div>
 
-          <div className="lg:col-span-2 flex flex-col gap-6">
+          <div className="lg:col-span-2 flex flex-col gap-6 cursor-pointer">
             {ways.map((item, idx) => {
               const Icon = item.icon
               return (
