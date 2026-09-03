@@ -19,9 +19,9 @@ export function GalleryHero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/images/live/Untitled-design-30.jpg"
+          src="/gallery/program-2.webp"
           alt="Shri Shyam Foundation Gallery"
-          className="w-full h-full object-cover"
+          className="w-full h-full "
         />
         <div className="absolute inset-0 bg-black/40" />
       </div>
@@ -45,18 +45,18 @@ export function GalleryHero() {
           Stories of Hope
         </motion.h1>
 
-        <motion.p variants={fadeUp} initial="hidden" animate="show" custom={2} className="text-lg sm:text-xl text-slate-300 mb-10 max-w-2xl leading-relaxed">
+        <motion.p variants={fadeUp} initial="hidden" animate="show" custom={2} className="text-lg  sm:text-xl text-slate-300 mb-10 max-w-2xl leading-relaxed">
           Every image reflects real lives touched, real volunteers serving, and real moments of kindness made possible through the support of our community.
         </motion.p>
 
         <motion.div variants={fadeUp} initial="hidden" animate="show" custom={3} className="flex flex-wrap items-center gap-4">
           <Link href="/donate">
-            <Button variant="primary" size="lg" className="rounded-full h-14 px-8 font-bold text-base shadow-2xl shadow-slate-500/25 hover:shadow-slate-500/40 hover:-translate-y-1 transition-all">
+            <Button variant="primary" size="lg" className="rounded-full cursor-pointer h-14 px-8 font-bold text-base shadow-2xl shadow-slate-500/25 hover:shadow-slate-500/40 hover:-translate-y-1 transition-all">
               Donate Now <HandCoins className="w-4 h-4 ml-2" />
             </Button>
           </Link>
           <Link href="/contact">
-            <Button size="lg" className="rounded-full h-14 px-8 font-bold text-base bg-white/10 border border-white/30 text-white hover:bg-white/20 backdrop-blur-sm transition-all">
+            <Button size="lg" className="rounded-full cursor-pointer h-14 px-8 font-bold text-base bg-white/10 border border-white/30 text-white hover:bg-white/20 backdrop-blur-sm transition-all">
               Become Volunteer
             </Button>
           </Link>

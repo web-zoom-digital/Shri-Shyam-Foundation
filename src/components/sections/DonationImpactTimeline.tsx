@@ -227,7 +227,7 @@ export function DonationImpactTimeline() {
               className="inline-flex mb-5">
               <Heart className="w-10 h-10 text-orange-400 fill-orange-400" />
             </motion.div>
-            <h3 className="text-3xl lg:text-4xl font-extrabold mb-4 leading-tight">
+            <h3 className="text-3xl text-white lg:text-4xl font-extrabold mb-4 leading-tight">
               Your Kindness Becomes<br className="hidden sm:block" /> Someone&apos;s Hope
             </h3>
             <p className="text-slate-200 text-base max-w-xl mx-auto mb-8 leading-relaxed">

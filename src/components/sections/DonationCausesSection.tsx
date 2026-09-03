@@ -28,7 +28,7 @@ const causes = [
     softBg: "bg-rose-50",
     borderColor: "border-rose-100",
     iconBg: "bg-rose-100",
-    image: "/images/live/jairam-8.png",
+    image: "/gallery/program-8.webp",
     alt: "SSF volunteers and children gathered at a foundation celebration event at an ashram — a moment of joy and community support",
   },
   {
@@ -43,7 +43,7 @@ const causes = [
     softBg: "bg-slate-50",
     borderColor: "border-slate-100",
     iconBg: "bg-slate-100",
-    image: "/images/live/5.jpg-1.jpeg",
+    image: "/gallery/program-2.webp",
     alt: "The Shri Shyam Foundation core team seated and standing together at a community event under the Food For Life programme banner",
   },
   {
@@ -58,7 +58,7 @@ const causes = [
     softBg: "bg-orange-50",
     borderColor: "border-orange-100",
     iconBg: "bg-orange-100",
-    image: "/images/live/6.jpg.jpeg",
+    image: "/gallery/program-3.webp",
     alt: "Young students in traditional attire sitting cross-legged and praying before a meal at a Shri Shyam Foundation community food event",
   },
   {
@@ -73,7 +73,7 @@ const causes = [
     softBg: "bg-slate-50",
     borderColor: "border-slate-100",
     iconBg: "bg-slate-100",
-    image: "/images/live/8.jpg.jpeg",
+    image: "/gallery/program-10.webp",
     alt: "SSF volunteer feeding rescued cow — cow welfare programme",
   },
   {
@@ -88,7 +88,7 @@ const causes = [
     softBg: "bg-purple-50",
     borderColor: "border-purple-100",
     iconBg: "bg-purple-100",
-    image: "/images/live/IMG20260714115736-6XDWu.jpg",
+    image: "/gallery/program-2.webp",
     alt: "SSF volunteer handing a school supply kit to a boy while uniformed classmates wait outside a school building",
   },
   {
@@ -118,7 +118,7 @@ const causes = [
     softBg: "bg-red-50",
     borderColor: "border-red-100",
     iconBg: "bg-red-100",
-    image: "/images/live/Untitled-design-30.jpg",
+    image: "/gallery/treatment_Seva.webp",
     alt: "SSF volunteers serving hot food to families seated at an indoor community feeding event",
   },
 ]
@@ -244,12 +244,12 @@ export function DonationCausesSection() {
           </p>
           <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center">
             <Link href="/donate">
-              <Button variant="primary" className="w-full sm:w-auto text-black rounded-full px-10 h-12 sm:h-13 font-bold text-sm sm:text-base shadow-lg shadow-slate-500/25">
+              <Button variant="primary" className="w-full sm:w-auto rounded-full px-10 h-12 sm:h-13 font-bold text-sm sm:text-base shadow-lg shadow-slate-500/25">
                 ❤️ Donate Now
               </Button>
             </Link>
             <a href="https://wa.me/919990145555" target="_blank" rel="noopener noreferrer">
-              <Button variant="primary" className="w-full text-slate-900 sm:w-auto rounded-full px-8 h-12 sm:h-13 font-bold text-sm sm:text-base">
+              <Button variant="primary" className="w-full sm:w-auto rounded-full px-8 h-12 sm:h-13 font-bold text-sm sm:text-base">
                 💬 WhatsApp Us
               </Button>
             </a>

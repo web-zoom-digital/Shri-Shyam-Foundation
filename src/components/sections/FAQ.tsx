@@ -19,7 +19,7 @@ export function FAQ() {
           subtitle="Clear answers about donations, volunteering, and in-kind support."
         />
 
-        <div className="flex flex-col gap-4 mt-12">
+        <div className="flex flex-col gap-4 mt-12 ">
           {homeFaqs.map((faq, idx) => (
             <motion.div
               key={faq.q}
@@ -30,7 +30,7 @@ export function FAQ() {
               transition={{ duration: 0.4, delay: idx * 0.1 }}
             >
               <button
-                className="w-full text-left px-6 py-5 flex items-center justify-between gap-4"
+                className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 cursor-pointer"
                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
                 aria-expanded={openIndex === idx}
                 aria-controls={`faq-panel-${idx}`}
@@ -58,7 +58,7 @@ export function FAQ() {
                       id={`faq-panel-${idx}`}
                       role="region"
                       aria-labelledby={`faq-button-${idx}`}
-                      className="px-6 pb-6 pt-0 text-slate-600 leading-relaxed text-sm"
+                      className="px-6 pb-6 pt-0 text-slate-600 leading-relaxed text-sm "
                     >
                       {faq.a}
                     </div>
