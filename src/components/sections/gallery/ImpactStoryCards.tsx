@@ -24,7 +24,7 @@ const stories = [
     title: "Education Support",
     description: "School visits where we meet children, hand out learning kits when we can, and encourage them to stay in class.",
     icon: BookOpen,
-    image: "/gallery/program-1.webp",
+    image: "/gallery/program-2.webp",
     color: "bg-slate-500",
     gradient: "from-slate-500/20 to-transparent",
   },

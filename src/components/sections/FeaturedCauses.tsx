@@ -20,7 +20,7 @@ const causes = [
     title: "Education Support Kits",
     desc: "Help children stay in school with bags, notebooks and stationery through our education drives.",
     focus: "Education",
-    image: "/gallery/program-1.webp",
+    image: "/gallery/program-2.webp",
     href: "/donate?amount=2501",
   },
   {
@@ -59,7 +59,7 @@ export function FeaturedCauses() {
                   alt={cause.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  className=" transition-transform duration-700 hover:scale-105"
+                  className=" transition-transform cursor-pointer duration-700 hover:scale-105"
                 />
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">
                   {cause.focus}

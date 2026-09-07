@@ -123,12 +123,12 @@ export function AccountDetailsPageClient() {
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
               <Link href="/donate">
-                <Button variant="primary" size="lg" className="w-full sm:w-auto rounded-full h-12 sm:h-13 px-6 sm:px-8 font-bold shadow-2xl shadow-slate-600/40">
+                <Button variant="primary" size="lg" className="w-full cursor-pointer sm:w-auto rounded-full h-12 sm:h-13 px-6 sm:px-8 font-bold shadow-2xl shadow-slate-600/40">
                   Donate Now <HandCoins className="w-4 h-4 ml-2" />
                 </Button>
               </Link>
               <a href="https://wa.me/919990145555" target="_blank" rel="noopener noreferrer">
-                <Button variant="whatsapp" size="lg" className="w-full sm:w-auto rounded-full h-12 sm:h-13 px-6 sm:px-8 font-bold">
+                <Button variant="whatsapp" size="lg" className="w-full cursor-pointer sm:w-auto rounded-full h-12 sm:h-13 px-6 sm:px-8 font-bold">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-5 h-5 mr-2 fill-white">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
                   </svg>
@@ -136,7 +136,7 @@ export function AccountDetailsPageClient() {
                 </Button>
               </a>
               <a href="tel:+919990145555">
-                <Button size="lg" className="w-full sm:w-auto rounded-full h-12 sm:h-13 px-6 sm:px-8 font-bold bg-white/10 border border-white/30 text-white hover:bg-white/20">
+                <Button size="lg" className="w-full cursor-pointer sm:w-auto rounded-full h-12 sm:h-13 px-6 sm:px-8 font-bold bg-white/10 border border-white/30 text-white hover:bg-white/20">
                   <Phone className="w-4 h-4 mr-2" /> Call Us
                 </Button>
               </a>
@@ -266,7 +266,7 @@ export function AccountDetailsPageClient() {
                 <p className="font-extrabold text-lg mb-2">After Donating?</p>
                 <p className="text-slate-100 text-sm mb-5 leading-relaxed">Share your transaction ID with us and receive your 80G receipt within 24 hours.</p>
                 <a href="https://wa.me/919990145555?text=Hi%2C%20I%20just%20donated%20to%20Shri%20Shyam%20Foundation.%20My%20transaction%20ID%20is%3A%20" target="_blank" rel="noopener noreferrer">
-                  <Button className="w-full bg-white text-slate-700 hover:bg-slate-50 font-bold rounded-full h-11 text-sm border-0 shadow-lg">
+                  <Button className="w-full cursor-pointer bg-white text-slate-700 hover:bg-slate-50 font-bold rounded-full h-11 text-sm border-0 shadow-lg">
                     Share via WhatsApp
                   </Button>
                 </a>
@@ -323,12 +323,12 @@ export function AccountDetailsPageClient() {
           <motion.div variants={fadeUp} initial="hidden" whileInView="show" custom={0.5} viewport={{ once: true }}
             className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
             <a href="https://wa.me/919990145555" target="_blank" rel="noopener noreferrer">
-              <Button variant="primary" className="rounded-full px-10 h-13 font-bold text-base shadow-lg shadow-slate-500/25">
+              <Button variant="primary" className="rounded-full cursor-pointer px-10 h-13 font-bold text-base shadow-lg shadow-slate-500/25">
                 Share Transaction ID on WhatsApp
               </Button>
             </a>
             <a href="mailto:info@shrishyamfoundation.org">
-              <Button variant="outline" className="rounded-full px-10 h-13 font-bold text-base">
+              <Button variant="outline" className="rounded-full cursor-pointer px-10 h-13 font-bold text-base">
                 Email Your Receipt <Mail className="w-4 h-4 ml-2" />
               </Button>
             </a>
@@ -344,7 +344,7 @@ export function AccountDetailsPageClient() {
             {faqs.map((faq, i) => (
               <motion.div key={i} variants={fadeUp} initial="hidden" whileInView="show" custom={i * 0.08} viewport={{ once: true }}
                 className="premium-card rounded-2xl overflow-hidden">
-                <button className="w-full text-left p-6 flex items-center justify-between gap-4 font-bold text-slate-900 hover:text-slate-600 transition-colors"
+                <button className="w-full cursor-pointer text-left p-6 flex items-center justify-between gap-4 font-bold text-slate-900 hover:text-slate-600 transition-colors"
                   onClick={() => setOpenFaq(openFaq === i ? null : i)} aria-expanded={openFaq === i}>
                   {faq.q}
                   <ChevronDown className={`w-5 h-5 shrink-0 transition-transform ${openFaq === i ? "rotate-180 text-slate-600" : ""}`} />
@@ -375,17 +375,17 @@ export function AccountDetailsPageClient() {
               </p>
               <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
                 <Link href="/donate">
-                  <Button className="w-full sm:w-auto bg-orange-500 hover:bg-orange-400 text-white font-bold rounded-full px-8 sm:px-10 h-12 sm:h-14 text-sm sm:text-base shadow-xl border-0">
+                  <Button className="w-full cursor-pointer sm:w-auto bg-orange-500 hover:bg-orange-400 text-white font-bold rounded-full px-8 sm:px-10 h-12 sm:h-14 text-sm sm:text-base shadow-xl border-0">
                     Donate Now <HandCoins className="w-4 h-4 ml-2" />
                   </Button>
                 </Link>
                 <a href="tel:+919990145555">
-                  <Button className="w-full sm:w-auto bg-white/10 text-white hover:bg-white/20 font-bold rounded-full px-8 sm:px-10 h-12 sm:h-14 text-sm sm:text-base border border-white/30">
+                  <Button className="w-full cursor-pointer sm:w-auto bg-white/10 text-white hover:bg-white/20 font-bold rounded-full px-8 sm:px-10 h-12 sm:h-14 text-sm sm:text-base border border-white/30">
                     <Phone className="w-4 h-4 mr-2" /> Call Now
                   </Button>
                 </a>
                 <a href="https://wa.me/919990145555" target="_blank" rel="noopener noreferrer">
-                  <Button className="w-full sm:w-auto bg-[#25D366]/20 text-white hover:bg-[#25D366]/30 font-bold rounded-full px-8 sm:px-10 h-12 sm:h-14 text-sm sm:text-base border border-white/30">
+                  <Button className="w-full cursor-pointer sm:w-auto bg-[#25D366]/20 text-white hover:bg-[#25D366]/30 font-bold rounded-full px-8 sm:px-10 h-12 sm:h-14 text-sm sm:text-base border border-white/30">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-5 h-5 mr-2 fill-[#25D366]">
                       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
                     </svg>
