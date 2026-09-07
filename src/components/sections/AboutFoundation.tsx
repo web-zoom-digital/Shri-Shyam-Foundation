@@ -9,8 +9,10 @@ import { Button } from "@/components/ui/Button"
 
 const carouselImages = [
   "/images/live/abot-syam.png",
-  "/images/live/abot-syam.png",
-  "/images/live/abot-syam.png"
+  "/images/live/IMG20260714115736-6XDWu.jpg",
+  "/images/live/IMG20260714115739-bOYlA.jpg",
+  "/images/live/8.jpg.jpeg",
+  "/images/live/6.jpg.jpeg",
 ]
 
 export function AboutFoundation() {

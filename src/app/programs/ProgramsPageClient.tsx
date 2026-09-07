@@ -303,7 +303,7 @@ export function ProgramsPageClient() {
 
             <div>
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl shadow-slate-900/10 mb-6 border-4 border-white">
-                <img src={active.image} alt={active.title} className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" />
+                <img src={active.image} alt={active.title} className="w-full h-full object-fit transform hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="premium-card rounded-2xl p-6">
                 <h3 className="font-bold text-slate-900 mb-4">Who We Serve</h3>
@@ -330,7 +330,7 @@ export function ProgramsPageClient() {
               <motion.div key={p.id} variants={fadeUp} initial="hidden" whileInView="show" custom={i * 0.1} viewport={{ once: true }}
                 className="premium-card rounded-2xl group cursor-pointer overflow-hidden flex flex-col" onClick={() => { setActiveProgram(p.id); window.scrollTo({ top: 0, behavior: "smooth" }) }}>
                 <div className="aspect-[16/10] w-full overflow-hidden relative border-b border-slate-100">
-                  <img src={p.image} alt={p.title} className="w-full h-full object-cover group-hover:scale-105" />
+                  <img src={p.image} alt={p.title} className="w-full h-full object-fit group-hover:scale-105" />
                   <div className="absolute top-4 left-4">
                     <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${p.color} flex items-center justify-center shadow-lg`}>
                       <p.icon className="w-5 h-5 text-white" />

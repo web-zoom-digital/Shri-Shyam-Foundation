@@ -39,9 +39,10 @@ const faqs = [
 
 const heroImages = [
   { src: "/images/live/abot-syam.png", alt: "Shri Shyam Foundation volunteers in SSF T-shirts standing in front of the Food For Life programme banner" },
-  { src: "/images/live/abot-syam.png", alt: "SSF founder serving hot dal from a large pot to beneficiaries at an outdoor community food distribution drive" },
-  { src: "/images/live/abot-syam.png", alt: "SSF team and a guest posing with packaged food containers and a bouquet ahead of a community meal distribution event" },
-  { src: "/images/live/abot-syam.png", alt: "Children and young monks seated in rows on a carpet eating traditional meals at a Shri Shyam Foundation celebration at a temple" },
+  { src: "/images/live/IMG20260714115736-6XDWu.jpg", alt: "SSF founder serving hot dal from a large pot to beneficiaries at an outdoor community food distribution drive" },
+  { src: "/images/live/IMG20260714115739-bOYlA.jpg", alt: "SSF team and a guest posing with packaged food containers and a bouquet ahead of a community meal distribution event" },
+  { src: "/images/live/8.jpg.jpeg", alt: "Children receiving meals at a Shri Shyam Foundation food distribution event" },
+  { src: "/images/live/6.jpg.jpeg", alt: "SSF volunteers doing community seva and outreach work" },
 ]
 
 export function AboutPageClient() {
@@ -128,7 +129,7 @@ export function AboutPageClient() {
                     initial="enter"
                     animate="center"
                     exit="exit"
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-fit"
                   />
                 </AnimatePresence>
 
@@ -211,7 +212,7 @@ export function AboutPageClient() {
             </motion.div>
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" custom={0.2} viewport={{ once: true }} className="relative">
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl shadow-slate-900/10 border-8 border-white">
-                <img src="/images/live/5.jpg-1.jpeg" alt="Shri Shyam Foundation volunteers" className="w-full h-full object-cover" />
+                <img src="/images/live/5.jpg-1.jpeg" alt="Shri Shyam Foundation volunteers" className="w-full h-full object-fit" />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-slate-600 text-white p-6 rounded-2xl shadow-xl max-w-[200px]">
                 <p className="text-4xl font-black"> 9+ </p>

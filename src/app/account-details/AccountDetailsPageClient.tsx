@@ -369,7 +369,7 @@ export function AccountDetailsPageClient() {
                 <Heart className="w-4 h-4 fill-orange-400 text-orange-400" />
                 <span className="text-xs sm:text-sm font-semibold">Creating Hope Together</span>
               </div>
-              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold mb-3 sm:mb-4 leading-tight">Every Contribution Creates Hope</h2>
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold mb-3 sm:mb-4 text-white leading-tight">Every Contribution Creates Hope</h2>
               <p className="text-slate-200 text-sm sm:text-lg max-w-2xl mx-auto mb-7 sm:mb-10 leading-relaxed">
                 Whether it is ₹100 or ₹1,00,000 — your generosity feeds families, educates children, heals patients, and protects animals. Thank you for your kindness.
               </p>
