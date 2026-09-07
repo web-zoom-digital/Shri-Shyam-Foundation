@@ -199,7 +199,7 @@ export function AboutPageClient() {
       {/* Foundation Story */}
       <section className="section-spacing bg-white">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-[4fr_5.5fr] gap-12 lg:gap-16 items-center">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}>
               <SectionHeader badge="Our Foundation Story" title="It Started With One Hungry Family" subtitle="" />
               <div className="space-y-5 text-slate-600 leading-relaxed text-[1.05rem]">
@@ -210,12 +210,12 @@ export function AboutPageClient() {
               </div>
             </motion.div>
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" custom={0.2} viewport={{ once: true }} className="relative">
-              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl shadow-slate-900/10 border-8 border-white">
-                <img src="/images/live/5.jpg-1.jpeg" alt="Shri Shyam Foundation volunteers" className="w-full h-full object-cover" />
+              <div className="rounded-3xl overflow-hidden shadow-2xl shadow-slate-900/10 border-8 border-white">
+                <img src="/images/hero/food-distribution.png" alt="Shri Shyam Foundation volunteers" className="w-full h-auto object-fit" />
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-slate-600 text-white p-6 rounded-2xl shadow-xl max-w-[200px]">
-                <p className="text-4xl font-black"> 9+ </p>
-                <p className="text-slate-200 text-sm font-medium">Years of Uninterrupted Service</p>
+              <div className="absolute -bottom-12 -left-6 bg-slate-600 text-white p-4 rounded-2xl shadow-xl max-w-[150px]">
+                <p className="text-3xl font-black"> 9+ </p>
+                <p className="text-slate-200 text-xs font-medium mt-1">Years of Uninterrupted Service</p>
               </div>
             </motion.div>
             

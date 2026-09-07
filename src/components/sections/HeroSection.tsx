@@ -13,6 +13,10 @@ const heroImages = [
     src: "/images/hero/clothes-banner.png",
     alt: "कपड़े दान करें मुस्कान बांटे - Donate Now",
   },
+  {
+    src: "/images/hero/food-distribution.png",
+    alt: "जरूरतमन्दों को भोजन कराएं",
+  },
 ];
 
 export function HeroSection() {
@@ -39,7 +43,7 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative w-full bg-slate-950 overflow-hidden mt-[4.25rem] sm:mt-[5rem] md:mt-[7.25rem]"
+      className="relative w-full bg-slate-950 overflow-hidden mt-[4.5rem] sm:mt-[5.5rem] md:mt-[6.75rem] lg:mt-[7.5rem]"
       aria-label="Shri Shyam Foundation hero"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
@@ -54,7 +58,7 @@ export function HeroSection() {
         <img
           src={heroImages[currentSlide].src}
           alt={heroImages[currentSlide].alt}
-          className="w-full h-auto block max-h-[78vh] object-cover bg-slate-950 mx-auto"
+          className="w-full h-[300px] sm:h-[380px] md:h-[450px] lg:h-[500px] xl:h-[550px] object-fit bg-slate-950 mx-auto"
           draggable={false}
         />
 

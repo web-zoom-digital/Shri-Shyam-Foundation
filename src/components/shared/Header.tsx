@@ -135,7 +135,7 @@ export function Header() {
         {/* Main Navbar */}
         <div
           className={`w-full px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 max-w-[1920px] mx-auto flex items-center justify-between transition-all duration-500 ${
-            isScrolled ? "py-3 sm:py-4" : "py-3 sm:py-6"
+            isScrolled ? "py-2 sm:py-2.5" : "py-2.5 sm:py-3"
           }`}
         >
           <Link href="/" className="flex items-center z-50 group shrink-0">
