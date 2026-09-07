@@ -1318,32 +1318,35 @@ export function CowDonationPageClient() {
       {/* ── FINAL CTA ── */}
       <section className="section-spacing bg-white pt-0">
         <div className="container-custom">
-          <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-green-800 via-green-700 to-green-600 p-10 sm:p-14 text-white text-center shadow-2xl shadow-green-700/25">
-            <div className="text-5xl mb-4">🐄</div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold mb-3 leading-tight">
-              A Cow Is Waiting for Today&apos;s Meal
-            </h2>
-            <p className="text-green-50/90 text-base sm:text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
-              Start with ₹51 for a first roti, or choose ₹251 for a full day of
-              care. Whatever you give reaches the animals you see in these
-              photographs.
-            </p>
-            <div className="flex flex-wrap justify-center gap-3">
-              <a href="#donate-widget">
-                <Button className="bg-white text-green-800 hover:bg-green-50 font-bold rounded-full px-8 h-12 border-0">
-                  Choose a Seva Amount <HandCoins className="w-4 h-4 ml-2" />
-                </Button>
-              </a>
-              <a href="tel:+919990145555">
-                <Button className="bg-green-900/30 text-white hover:bg-green-900/40 font-bold rounded-full px-8 h-12 border border-white/25">
-                  <Phone className="w-4 h-4 mr-2" /> Call Us
-                </Button>
-              </a>
-              <Link href="/contact">
-                <Button className="bg-white/10 text-white hover:bg-white/20 font-bold rounded-full px-8 h-12 border border-white/25">
-                  Volunteer With Us <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </Link>
+          <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-slate-800 via-slate-700 to-slate-600 p-10 sm:p-14 text-white text-center shadow-2xl shadow-slate-900/30">
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-orange-400/15 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl pointer-events-none" />
+            <div className="relative z-10">
+              <div className="text-5xl mb-4">🐄</div>
+              <h2 className="text-3xl sm:text-4xl font-extrabold mb-3 text-white leading-tight">
+                A Cow Is Waiting for Today&apos;s Meal
+              </h2>
+              <p className="text-slate-200 text-base sm:text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
+                Start with ₹51 for a first roti, or choose ₹251 for a full day of
+                care. Whatever you give reaches the animals you see in these
+                photographs.
+              </p>
+              <div className="flex flex-wrap justify-center gap-3">
+                <a href="#donate-widget">
+                  <Button className="bg-orange-500 hover:bg-orange-400 text-white font-bold rounded-full px-8 h-12 border-0 shadow-lg shadow-orange-500/20">
+                    Choose a Seva Amount <HandCoins className="w-4 h-4 ml-2" />
+                  </Button>
+                </a>
+                <a href="tel:+919990145555">
+                  <Button className="bg-white/10 text-white hover:bg-white/20 font-bold rounded-full px-8 h-12 border border-white/30">
+                    <Phone className="w-4 h-4 mr-2" /> Call Us
+                  </Button>
+                </a>
+                <Link href="/contact">
+                  <Button className="bg-white/10 text-white hover:bg-white/20 font-bold rounded-full px-8 h-12 border border-white/30">
+                    Volunteer With Us <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
