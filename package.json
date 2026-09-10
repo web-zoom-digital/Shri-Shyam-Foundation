@@ -9,7 +9,6 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@cashfreepayments/cashfree-js": "^1.0.7",
     "@hookform/resolvers": "^5.5.7",
     "@radix-ui/react-slot": "^1.3.3",
     "@supabase/supabase-js": "^2.109.0",

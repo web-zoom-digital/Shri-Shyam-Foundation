@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server"
 import {
-  getCashfreeApiBase,
-  getCashfreeAuth,
+  getRazorpayAuth,
   resolveSiteUrl,
-} from "@/lib/cashfree"
+  encodeDonorOrderTags,
+} from "@/lib/razorpay"
 import { savePendingDonation } from "@/lib/pendingDonations"
 import { saveFormLead, updateLeadOrderId } from "@/lib/adminStore"
 
@@ -104,29 +104,11 @@ export async function POST(request: Request) {
       }
     }
 
-    const { appId, secretKey, paymentMode } = getCashfreeAuth()
-    // Prefer configured site URL; otherwise use request/Vercel host (live deploy safe).
+    const { keyId, keySecret } = getRazorpayAuth()
     const siteUrl = resolveSiteUrl(request)
-    const returnUrl = `${siteUrl}${returnPath}?order_id={order_id}`
-    const notifyUrl = `${siteUrl}/api/webhooks/cashfree`
 
-    // Only block production mode when the resolved return URL is still localhost.
-    if (paymentMode === "production" && /localhost|127\.0\.0\.1/i.test(siteUrl)) {
-      console.error(
-        "Production checkout blocked on localhost. Open the live site, or set NEXT_PUBLIC_SITE_URL."
-      )
-      return NextResponse.json(
-        {
-          error:
-            "Production payments must run on the live website domain. Please donate from the live site.",
-          fallbackTo: "/account-details",
-        },
-        { status: 400 }
-      )
-    }
-
-    if (!appId || !secretKey) {
-      console.warn("Cashfree credentials missing. Falling back to manual donation instructions.")
+    if (!keyId || !keySecret) {
+      console.warn("Razorpay credentials missing. Falling back to manual donation instructions.")
       return NextResponse.json(
         {
           manualPayment: true,
@@ -138,38 +120,28 @@ export async function POST(request: Request) {
       )
     }
 
-    const orderId = `ORDER_${Date.now()}_${Math.floor(Math.random() * 1000)}`
-    const noteParts = [
-      orderNote || "Donation",
-      `Donor:${name}`,
-      want80G ? `80G:Yes PAN:${pan}` : "80G:No",
-    ]
-    const composedNote = noteParts.join(" | ").slice(0, 200)
+    const receiptId = `RCPT_${Date.now()}_${Math.floor(Math.random() * 1000)}`
+    const orderAmountInPaise = Math.round(amount * 100)
 
     const payload = {
-      order_id: orderId,
-      order_amount: Math.round(amount * 100) / 100,
-      order_currency: "INR",
-      order_note: composedNote,
-      customer_details: {
-        customer_id: `CUST_${Date.now()}`,
-        customer_name: name,
-        customer_email: email,
-        customer_phone: phone,
-      },
-      order_meta: {
-        return_url: returnUrl,
-        notify_url: notifyUrl,
-      },
+      amount: orderAmountInPaise,
+      currency: "INR",
+      receipt: receiptId,
+      notes: {
+        name: name.slice(0, 50),
+        email: email.slice(0, 50),
+        phone: phone.slice(0, 50),
+        ...encodeDonorOrderTags({ want80G, pan, address, orderNote: orderNote || "Donation" })
+      }
     }
 
-    const response = await fetch(`${getCashfreeApiBase(paymentMode)}/orders`, {
+    const authHeader = `Basic ${Buffer.from(`${keyId}:${keySecret}`).toString("base64")}`
+
+    const response = await fetch(`https://api.razorpay.com/v1/orders`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "x-api-version": "2023-08-01",
-        "x-client-id": appId,
-        "x-client-secret": secretKey,
+        "Authorization": authHeader,
       },
       body: JSON.stringify(payload),
     })
@@ -177,29 +149,26 @@ export async function POST(request: Request) {
     const data = await response.json()
 
     if (!response.ok) {
-      // Log full Cashfree error detail for debugging in Vercel logs
       console.error(
-        "Cashfree Order Error",
+        "Razorpay Order Error",
         JSON.stringify({
           status: response.status,
-          message: data?.message,
-          type: data?.type,
-          code: data?.code,
+          message: data?.error?.description || data?.error?.message,
           payload: JSON.stringify(payload),
         })
       )
-      const cashfreeMsg = data?.message || data?.code || `HTTP ${response.status}`
+      const rzpMsg = data?.error?.description || data?.error?.message || `HTTP ${response.status}`
       return NextResponse.json(
         {
-          error: `Payment order failed: ${cashfreeMsg}. Please try UPI or bank transfer.`,
+          error: `Payment order failed: ${rzpMsg}. Please try UPI or bank transfer.`,
           fallbackTo: "/account-details",
-          _debug: { cashfreeStatus: response.status, cashfreeMessage: cashfreeMsg },
+          _debug: { rzpStatus: response.status, rzpMessage: rzpMsg },
         },
         { status: response.status >= 400 && response.status < 600 ? response.status : 502 }
       )
     }
 
-    const finalOrderId = typeof data.order_id === "string" ? data.order_id : orderId
+    const finalOrderId = typeof data.id === "string" ? data.id : receiptId
 
     savePendingDonation({
       orderId: finalOrderId,
@@ -214,9 +183,7 @@ export async function POST(request: Request) {
       createdAt: Date.now(),
     })
 
-    // ── Admin tracking: save form lead as PENDING_PAYMENT ──
     try {
-      // Extract referrer page from returnPath
       const sourcePage = returnPath || "/donate"
       const lead = await saveFormLead({
         orderId: finalOrderId,
@@ -232,18 +199,23 @@ export async function POST(request: Request) {
         status: "PENDING_PAYMENT",
         formFilledAt: Date.now(),
       })
-      // Link leadId immediately
       await updateLeadOrderId(lead.id, finalOrderId)
     } catch (trackErr) {
       console.warn("Admin lead tracking failed (non-critical):", trackErr)
     }
-    // ── End admin tracking ──
 
     return NextResponse.json({
-      payment_session_id: data.payment_session_id,
-      order_id: finalOrderId,
-      mode: paymentMode,
-      return_url: returnUrl,
+      razorpay_order_id: finalOrderId,
+      key_id: keyId,
+      amount: orderAmountInPaise,
+      currency: "INR",
+      name: "Shri Shyam Foundation",
+      description: orderNote || "Donation",
+      prefill: {
+        name,
+        email,
+        contact: phone
+      },
       site_url: siteUrl,
     })
   } catch (error) {

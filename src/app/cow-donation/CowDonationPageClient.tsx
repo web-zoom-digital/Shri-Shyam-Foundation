@@ -26,7 +26,7 @@ import {
 import { Button } from "@/components/ui/Button";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { DonorDetailsModal } from "@/components/donate/DonorDetailsModal";
-import { useCashfreeCheckout } from "@/hooks/useCashfreeCheckout";
+import { useRazorpayCheckout } from "@/hooks/useRazorpayCheckout";
 import type { DonorDetails } from "@/lib/donorSchema";
 
 const fadeUp = {
@@ -428,7 +428,7 @@ export function CowDonationPageClient() {
     clearPaymentError,
     clearPaymentSuccess,
     startCheckout,
-  } = useCashfreeCheckout();
+  } = useRazorpayCheckout();
 
   const finalAmount = customAmount
     ? parseInt(customAmount, 10) || 0

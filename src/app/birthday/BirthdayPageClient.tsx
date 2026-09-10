@@ -429,7 +429,7 @@ export function BirthdayPageClient() {
                           key={i}
                           initial={{ scaleY: 0 }}
                           animate={{ scaleY: 1 }}
-                          transition={{ duration: 0.4, delay: 0.5 + i * 0.15, origin: "bottom" }}
+                          transition={{ duration: 0.4, delay: 0.5 + i * 0.15 }}
                         >
                           <CandleIcon />
                         </motion.div>

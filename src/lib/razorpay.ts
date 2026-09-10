@@ -1,53 +1,15 @@
-export type CashfreeMode = "production" | "sandbox"
+import crypto from "crypto"
 
-export function getCashfreeAuth() {
-  const appId =
-    process.env.CASHFREE_APP_ID ||
-    process.env.CASHFREE_CLIENT_ID ||
-    process.env.NEXT_PUBLIC_CASHFREE_APP_ID
-  const secretKey =
-    process.env.CASHFREE_SECRET_KEY ||
-    process.env.CASHFREE_CLIENT_SECRET ||
-    process.env.CASHFREE_API_SECRET
-  const paymentMode = (process.env.CASHFREE_MODE || "production").toLowerCase() as CashfreeMode
-  return { appId, secretKey, paymentMode }
-}
+export function getRazorpayAuth() {
+  const keyId = process.env.RAZORPAY_KEY_ID || process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID
+  const keySecret = process.env.RAZORPAY_KEY_SECRET
 
-export function getCashfreeApiBase(mode: CashfreeMode) {
-  return mode === "sandbox"
-    ? "https://sandbox.cashfree.com/pg"
-    : "https://api.cashfree.com/pg"
+  return { keyId, keySecret }
 }
 
 export function isPaidStatus(status: unknown) {
   if (typeof status !== "string") return false
-  return ["PAID", "SUCCESS", "COMPLETED"].includes(status.toUpperCase())
-}
-
-export async function fetchCashfreeOrder(orderId: string) {
-  const { appId, secretKey, paymentMode } = getCashfreeAuth()
-  if (!appId || !secretKey) return null
-
-  const res = await fetch(
-    `${getCashfreeApiBase(paymentMode)}/orders/${encodeURIComponent(orderId)}`,
-    {
-      headers: {
-        "Content-Type": "application/json",
-        "x-api-version": "2023-08-01",
-        "x-client-id": appId,
-        "x-client-secret": secretKey,
-      },
-      cache: "no-store",
-    }
-  )
-
-  if (!res.ok) {
-    const body = await res.text().catch(() => "")
-    console.error("Cashfree order fetch failed:", res.status, body)
-    return null
-  }
-
-  return res.json()
+  return ["paid", "captured", "authorized", "SUCCESS"].includes(status.toLowerCase())
 }
 
 export type DonorOrderTags = {
@@ -55,6 +17,9 @@ export type DonorOrderTags = {
   pan: string
   address: string
   orderNote: string
+  name?: string
+  email?: string
+  phone?: string
 }
 
 export function encodeDonorOrderTags(input: {
@@ -65,10 +30,9 @@ export function encodeDonorOrderTags(input: {
 }): Record<string, string> {
   const raw: Record<string, string> = {
     want80g: input.want80G ? "1" : "0",
-    note: (input.orderNote || "Donation").slice(0, 80),
+    note: (input.orderNote || "Donation").slice(0, 40),
   }
 
-  // Only include PAN and address when 80G is requested — Cashfree rejects empty-string tag values.
   if (input.want80G && input.pan) {
     raw.pan = input.pan.slice(0, 10)
   }
@@ -76,8 +40,22 @@ export function encodeDonorOrderTags(input: {
     raw.addr = input.address.slice(0, 240)
   }
 
-  // Strip any remaining empty-string values to avoid Cashfree 400 errors.
   return Object.fromEntries(Object.entries(raw).filter(([, v]) => v !== ""))
+}
+
+export async function fetchRazorpayOrder(orderId: string) {
+  const { keyId, keySecret } = getRazorpayAuth()
+  if (!keyId || !keySecret) return null
+
+  const authHeader = `Basic ${Buffer.from(`${keyId}:${keySecret}`).toString("base64")}`
+  const res = await fetch(`https://api.razorpay.com/v1/orders/${encodeURIComponent(orderId)}`, {
+    headers: {
+      "Authorization": authHeader,
+    },
+    cache: "no-store",
+  })
+  if (!res.ok) return null
+  return res.json()
 }
 
 export function decodeDonorOrderTags(tags: unknown): DonorOrderTags {
@@ -92,7 +70,23 @@ export function decodeDonorOrderTags(tags: unknown): DonorOrderTags {
     pan: want80G && typeof map.pan === "string" ? map.pan.trim().toUpperCase() : "",
     address: want80G && typeof map.addr === "string" ? map.addr.trim() : "",
     orderNote: typeof map.note === "string" ? map.note.trim() : "Donation",
+    name: typeof map.name === "string" ? map.name.trim() : undefined,
+    email: typeof map.email === "string" ? map.email.trim() : undefined,
+    phone: typeof map.phone === "string" ? map.phone.trim() : undefined,
   }
+}
+
+export function verifyRazorpaySignature(orderId: string, paymentId: string, signature: string) {
+  const { keySecret } = getRazorpayAuth()
+  if (!keySecret) return false
+
+  const body = orderId + "|" + paymentId
+  const expectedSignature = crypto
+    .createHmac("sha256", keySecret)
+    .update(body.toString())
+    .digest("hex")
+
+  return expectedSignature === signature
 }
 
 function normalizeSiteUrl(raw: string): string {

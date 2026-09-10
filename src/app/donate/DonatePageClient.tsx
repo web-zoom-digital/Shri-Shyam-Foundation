@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/Button"
 import { SectionHeader } from "@/components/ui/SectionHeader"
 import { DonationCausesSection } from "@/components/sections/DonationCausesSection"
 import { DonorDetailsModal } from "@/components/donate/DonorDetailsModal"
-import { useCashfreeCheckout } from "@/hooks/useCashfreeCheckout"
+import { useRazorpayCheckout } from "@/hooks/useRazorpayCheckout"
 import type { DonorDetails } from "@/lib/donorSchema"
 import {
   GENERAL_PRESET_AMOUNTS,
@@ -84,7 +84,7 @@ export function DonatePageClient() {
     clearPaymentError,
     clearPaymentSuccess,
     startCheckout,
-  } = useCashfreeCheckout()
+  } = useRazorpayCheckout()
 
   React.useEffect(() => {
     if (paramAmount) {

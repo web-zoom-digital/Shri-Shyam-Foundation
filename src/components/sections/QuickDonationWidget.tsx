@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Heart, CheckCircle2, Shield, Star, Sparkles, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/Button"
 import { DonorDetailsModal } from "@/components/donate/DonorDetailsModal"
-import { useCashfreeCheckout } from "@/hooks/useCashfreeCheckout"
+import { useRazorpayCheckout } from "@/hooks/useRazorpayCheckout"
 import type { DonorDetails } from "@/lib/donorSchema"
 import {
   GENERAL_DONATION_OPTIONS,
@@ -37,7 +37,7 @@ export function QuickDonationWidget() {
     clearPaymentError,
     clearPaymentSuccess,
     startCheckout,
-  } = useCashfreeCheckout()
+  } = useRazorpayCheckout()
 
   const displayAmount = isCustom ? parseInt(customAmount) || 0 : selected
   const selectedOption = getDonationOption(displayAmount)
