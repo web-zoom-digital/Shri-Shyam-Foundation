@@ -252,7 +252,7 @@ export function ProgramsPageClient() {
               const isActive = activeProgram === p.id
               return (
                 <button key={p.id} onClick={() => setActiveProgram(p.id)}
-                  className={`flex items-center gap-2 px-5 py-3 rounded-full font-bold text-sm transition-all duration-300 ${isActive ? `bg-gradient-to-r ${p.color} text-white shadow-lg scale-105` : "bg-white text-slate-600 border border-slate-200 hover:border-slate-200 hover:text-slate-600"}`}>
+                  className={`flex items-center gap-2 px-5 py-3 rounded-full cursor-pointer font-bold text-sm transition-all duration-300 ${isActive ? `bg-gradient-to-r ${p.color} text-white shadow-lg scale-105` : "bg-white text-slate-600 border border-slate-200 hover:border-slate-200 hover:text-slate-600"}`}>
                   <Icon className="w-4 h-4" />
                   {p.title.split(" ")[0]} {p.title.split(" ")[1]}
                 </button>
@@ -289,12 +289,12 @@ export function ProgramsPageClient() {
 
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link href="/donate">
-                  <Button className={`bg-gradient-to-r ${active.color} text-white border-0 rounded-full px-8 h-12 font-bold shadow-lg`}>
+                  <Button className={`bg-gradient-to-r ${active.color} text-white border-0 cursor-pointer rounded-full px-8 h-12 font-bold shadow-lg`}>
                     Support This Program <HandCoins className="w-4 h-4 ml-2" />
                   </Button>
                 </Link>
                 <Link href="/contact">
-                  <Button variant="outline" className="rounded-full px-8 h-12 font-bold">
+                  <Button variant="outline" className="rounded-full px-8 h-12 font-bold cursor-pointer">
                     Volunteer <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                 </Link>

@@ -185,7 +185,7 @@ export function Header() {
             <Link href="/donate">
               <Button
                 variant="primary"
-                className="rounded-full shadow-lg shadow-red-500/25 hover:shadow-red-500/40 hover:-translate-y-0.5 transition-all duration-300 px-6 xl:px-8 py-5 xl:py-6 h-11 text-sm font-bold"
+                className="rounded-full cursor-pointer shadow-lg shadow-red-500/25 hover:shadow-red-500/40 hover:-translate-y-0.5 transition-all duration-300 px-6 xl:px-8 py-5 xl:py-6 h-11 text-sm font-bold"
               >
                 Donate Now
               </Button>
@@ -418,7 +418,7 @@ export function Header() {
                     <Button
                       variant="primary"
                       size="lg"
-                      className="w-full rounded-2xl border-0 bg-gradient-to-r from-[#dc2626] to-[#ef4444] text-white h-12 text-sm font-bold shadow-lg shadow-red-500/25"
+                      className="w-full rounded-2xl  border-0 bg-gradient-to-r from-[#dc2626] to-[#ef4444] text-white h-12 text-sm font-bold shadow-lg shadow-red-500/25"
                     >
                       Donate
                       <HandCoins className="ml-1.5 h-4 w-4" />

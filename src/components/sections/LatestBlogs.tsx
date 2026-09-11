@@ -22,7 +22,7 @@ const stories = [
     summary:
       "Bags, notebooks and stationery reach government-school children through our education support drives — so learning is not paused for want of basic supplies.",
     category: "Education",
-    image: "/gallery/program-1.webp",
+    image: "/gallery/program-2.webp",
     href: "/impact",
     cta: "View education impact",
   },

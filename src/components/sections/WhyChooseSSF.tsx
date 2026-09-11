@@ -61,13 +61,13 @@ export function WhyChooseSSF() {
               <img 
                 src="/images/live/Untitled-design-31.jpg" 
                 alt="Volunteers showing transparency"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-fit"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-50 via-transparent to-transparent opacity-90" />
             </div>
             
             {/* Absolute Trust Badge */}
-            <div className="absolute bottom-8 right-8 glass-card bg-white/90 backdrop-blur-xl border border-slate-200 shadow-lg p-6 rounded-2xl max-w-xs">
+            {/* <div className="absolute bottom-8 right-8 glass-card bg-white/90 backdrop-blur-xl border border-slate-200 shadow-lg p-6 rounded-2xl max-w-xs">
               <p className="text-sm text-slate-700 font-medium italic">
                 "SSF is one of the most transparent organizations we have worked with. Their direct impact model is highly effective."
               </p>
@@ -78,7 +78,7 @@ export function WhyChooseSSF() {
                   <p className="text-xs text-slate-500">CSR Partner</p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </motion.div>
 
         </div>
