@@ -43,6 +43,7 @@ const desktopNavLinks = [
   { name: "Gallery", href: "/gallery" },
   { name: "Impact", href: "/impact" },
   { name: "Contact", href: "/contact" },
+    { name: "Birthday", href: "/birthday" },
 ]
 
 function isActivePath(pathname: string, href: string) {
