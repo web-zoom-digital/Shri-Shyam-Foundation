@@ -1,4 +1,4 @@
-import { decodeDonorOrderTags, fetchCashfreeOrder, isPaidStatus } from "@/lib/cashfree"
+import { decodeDonorOrderTags, fetchRazorpayOrder, isPaidStatus } from "@/lib/razorpay"
 import { sendDonorAndAdminDonationEmails } from "@/lib/mailer"
 import {
   getPendingDonation,
@@ -25,34 +25,30 @@ function mergePending(
   fallback?: DonorFallback
 ): PendingDonation | null {
   const existing = getPendingDonation(orderId)
-  const tags = decodeDonorOrderTags(order?.order_tags)
-  const customer =
-    order?.customer_details && typeof order.customer_details === "object"
-      ? (order.customer_details as Record<string, unknown>)
-      : {}
+  const tags = decodeDonorOrderTags(order?.notes)
 
   const amount = Number(
     existing?.amount ??
       fallback?.amount ??
-      order?.order_amount ??
+      (typeof order?.amount === "number" ? order.amount / 100 : undefined) ??
       0
   )
   const name = String(
     existing?.name ||
       fallback?.name ||
-      customer.customer_name ||
+      tags.name ||
       ""
   ).trim()
   const email = String(
     existing?.email ||
       fallback?.email ||
-      customer.customer_email ||
+      tags.email ||
       ""
   ).trim()
   const phone = String(
     existing?.phone ||
       fallback?.phone ||
-      customer.customer_phone ||
+      tags.phone ||
       ""
   ).replace(/\D/g, "")
 
@@ -85,13 +81,12 @@ function mergePending(
 }
 
 /**
- * Verify Cashfree payment and send donor + admin emails.
- * Safe to call from client confirm and Cashfree webhook (idempotent via Resend keys).
+ * Verify payment and send donor + admin emails.
  */
 export async function fulfillPaidDonation(orderId: string, fallback?: DonorFallback) {
-  const order = (await fetchCashfreeOrder(orderId)) as Record<string, unknown> | null
+  const order = (await fetchRazorpayOrder(orderId)) as Record<string, unknown> | null
   const paymentStatus =
-    typeof order?.order_status === "string" ? order.order_status : "UNKNOWN"
+    typeof order?.status === "string" ? order.status : "UNKNOWN"
 
   if (!order || !isPaidStatus(paymentStatus)) {
     return {

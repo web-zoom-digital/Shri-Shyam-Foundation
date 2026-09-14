@@ -21,7 +21,7 @@ const sections = [
   },
   {
     title: "Donations",
-    content: "All donations made through our website are voluntary. Refunds and cancellations are handled as described in our Refund & Cancellation Policy at /refund-policy. By donating, you confirm that the funds are legally acquired. We issue 80G certificates for eligible donations as required by Indian tax law."
+    content: "All donations made through our website are voluntary and non-refundable. By donating, you confirm that the funds are legally acquired. We issue 80G certificates for eligible donations as required by Indian tax law."
   },
   {
     title: "Accuracy of Information",
