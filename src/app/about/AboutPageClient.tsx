@@ -362,16 +362,16 @@ export function AboutPageClient() {
             </motion.div>
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" custom={0.2} viewport={{ once: true }}>
               <div className="bg-gradient-to-br from-slate-600 to-slate-800 rounded-3xl p-10 text-white shadow-2xl shadow-slate-900/25">
-                <h3 className="text-2xl font-extrabold mb-2">Join Our Mission</h3>
+                <h3 className="text-2xl font-extrabold text-white mb-2">Join Our Mission</h3>
                 <p className="text-slate-200 mb-8 leading-relaxed">Every act of generosity — however small — creates a ripple of change. Donate, volunteer, or simply share our work. Together, we can end hunger in our lifetime.</p>
                 <div className="flex flex-col gap-3">
                   <Link href="/donate">
-                    <Button className="w-full bg-white text-slate-700 hover:bg-slate-50 font-bold rounded-full h-12 shadow-lg border-0">
+                    <Button className="w-full bg-white text-slate-700 hover:bg-slate-50 font-bold rounded-full h-12 shadow-lg border-0 cursor-pointer">
                       Donate Now <HandCoins className="w-4 h-4 ml-2" />
                     </Button>
                   </Link>
                   <Link href="/contact">
-                    <Button className="w-full bg-slate-500/20 text-white hover:bg-slate-500/30 font-bold rounded-full h-12 border border-white/20">
+                    <Button className="w-full bg-slate-500/20 text-white hover:bg-slate-500/30 font-bold rounded-full h-12 border border-white/20 cursor-pointer">
                       Become a Volunteer <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
                   </Link>
@@ -389,8 +389,8 @@ export function AboutPageClient() {
           <div className="space-y-4">
             {faqs.map((faq, i) => (
               <motion.div key={i} variants={fadeUp} initial="hidden" whileInView="show" custom={i * 0.1} viewport={{ once: true }}
-                className="premium-card rounded-2xl overflow-hidden">
-                <button className="w-full text-left p-6 flex items-center justify-between gap-4 font-bold text-slate-900 hover:text-slate-600 transition-colors"
+                className="premium-card rounded-2xl overflow-hidden ">
+                <button className="w-full text-left p-6 flex items-center justify-between gap-4 font-bold text-slate-900 hover:text-slate-600 transition-colors cursor-pointer"
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}>
                   {faq.q}
                   <ChevronDown className={`w-5 h-5 shrink-0 transition-transform ${openFaq === i ? "rotate-180" : ""}`} />
@@ -407,16 +407,16 @@ export function AboutPageClient() {
         <div className="container-custom text-center">
           <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
             className="bg-gradient-to-r from-orange-500 to-amber-400 rounded-3xl p-14 text-white shadow-2xl shadow-orange-500/25">
-            <h2 className="text-4xl font-extrabold mb-4">Ready to Make a Difference?</h2>
+            <h2 className="text-4xl text-white font-extrabold mb-4">Ready to Make a Difference?</h2>
             <p className="text-orange-100 text-lg max-w-2xl mx-auto mb-8">Whether you donate ₹100 or ₹1,00,000 — your contribution goes directly to a family in need. Start your impact journey today.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/donate">
-                <Button className="bg-white text-orange-600 hover:bg-orange-50 font-bold rounded-full px-10 h-14 text-base shadow-xl border-0">
+                <Button className="bg-white cursor-pointer text-orange-600 hover:bg-orange-50 font-bold rounded-full px-10 h-14 text-base shadow-xl border-0">
                   Donate Now <HandCoins className="w-4 h-4 ml-2" />
                 </Button>
               </Link>
               <Link href="/contact">
-                <Button className="bg-orange-600/20 text-white hover:bg-orange-600/30 font-bold rounded-full px-10 h-14 text-base border border-white/30">
+                <Button className="bg-orange-600/20 text-white cursor-pointer hover:bg-orange-600/30 font-bold rounded-full px-10 h-14 text-base border border-white/30">
                   Volunteer With Us <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </Link>

@@ -196,7 +196,7 @@ export function ImpactPageClient() {
                 Every gift below uses the same amounts you see on Home and Donate — so the impact story never changes from page to page.
               </p>
               <Link href="/donate">
-                <Button className="bg-[#dc2626] hover:bg-[#b91c1c] text-white font-bold rounded-full px-10 h-14 text-base border-0 shadow-xl">
+                <Button className="bg-[#dc2626] hover:bg-[#b91c1c] cursor-pointer text-white font-bold rounded-full px-10 h-14 text-base border-0 shadow-xl">
                   Donate Now <HandCoins className="w-4 h-4 ml-2" />
                 </Button>
               </Link>
@@ -213,7 +213,7 @@ export function ImpactPageClient() {
                     <p className="text-slate-700 text-sm font-medium group-hover:text-slate-900 transition-colors">{d.desc}</p>
                     <Link
                       href={d.href}
-                      className="shrink-0 text-[#dc2626] text-xs font-bold hover:text-[#b91c1c] whitespace-nowrap"
+                      className="shrink-0 text-[#dc2626] cursor-pointer text-xs font-bold hover:text-[#b91c1c] whitespace-nowrap"
                     >
                       Donate →
                     </Link>
@@ -257,16 +257,16 @@ export function ImpactPageClient() {
         <div className="container-custom text-center">
           <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
             className="bg-gradient-to-r from-orange-500 to-amber-400 rounded-3xl p-14 text-white shadow-2xl shadow-orange-500/25">
-            <h2 className="text-4xl font-extrabold mb-4">Add Your Impact to This Story</h2>
+            <h2 className="text-4xl font-extrabold text-white mb-4">Add Your Impact to This Story</h2>
             <p className="text-orange-100 text-lg max-w-2xl mx-auto mb-8">The numbers above grew because thousands of ordinary people made an extraordinary choice — to give. Your turn.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/donate">
-                <Button className="bg-white text-orange-600 hover:bg-orange-50 font-bold rounded-full px-10 h-14 text-base shadow-xl border-0">
+                <Button className="bg-white text-orange-600 cursor-pointer hover:bg-orange-50 font-bold rounded-full px-10 h-14 text-base shadow-xl border-0">
                   Donate Now <HandCoins className="w-4 h-4 ml-2" />
                 </Button>
               </Link>
               <Link href="/contact">
-                <Button className="bg-orange-600/20 text-white hover:bg-orange-600/30 font-bold rounded-full px-10 h-14 text-base border border-white/30">
+                <Button className="bg-orange-600/20 text-white cursor-pointer hover:bg-orange-600/30 font-bold rounded-full px-10 h-14 text-base border border-white/30">
                   Become a Volunteer <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </Link>

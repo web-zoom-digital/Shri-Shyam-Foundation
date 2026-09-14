@@ -160,7 +160,7 @@ export function ContactPageClient() {
                     <textarea required placeholder="Tell us how we can help you..." rows={5} value={formData.message} onChange={e => setFormData({ ...formData, message: e.target.value })}
                       className="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-white text-slate-900 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all resize-none" />
                   </div>
-                  <Button type="submit" variant="primary" className="w-full rounded-full h-14 font-bold text-base shadow-lg shadow-slate-500/20">
+                  <Button type="submit" variant="primary" className="w-full cursor-pointer rounded-full h-14 font-bold text-base shadow-lg shadow-slate-500/20">
                     Send Message <Send className="w-4 h-4 ml-2" />
                   </Button>
                 </form>
@@ -195,7 +195,7 @@ export function ContactPageClient() {
               <div className="bg-gradient-to-r from-orange-500 to-amber-400 rounded-2xl p-7 text-white">
                 <div className="flex items-center gap-3 mb-4">
                   <AlertCircle className="w-6 h-6 shrink-0" />
-                  <h3 className="font-bold text-lg">Emergency Helpline</h3>
+                  <h3 className="font-bold text-white text-lg">Emergency Helpline</h3>
                 </div>
                 <p className="text-orange-100 text-sm mb-4 leading-relaxed">For disaster-related emergencies or urgent food/medical assistance, our emergency line operates 24/7.</p>
                 <a href="tel:+919990145555" className="inline-flex items-center gap-2 bg-white text-orange-600 font-black text-lg px-6 py-3 rounded-full hover:bg-orange-50 transition-colors">
@@ -232,7 +232,7 @@ export function ContactPageClient() {
             {faqs.map((faq, i) => (
               <motion.div key={i} variants={fadeUp} initial="hidden" whileInView="show" custom={i * 0.1} viewport={{ once: true }}
                 className="premium-card rounded-2xl overflow-hidden">
-                <button className="w-full text-left p-6 flex items-center justify-between gap-4 font-bold text-slate-900 hover:text-slate-600 transition-colors"
+                <button className="w-full text-left p-6 flex cursor-pointer items-center justify-between gap-4 font-bold text-slate-900 hover:text-slate-600 transition-colors"
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}>
                   {faq.q}
                   <ChevronDown className={`w-5 h-5 shrink-0 transition-transform ${openFaq === i ? "rotate-180" : ""}`} />

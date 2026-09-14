@@ -279,7 +279,7 @@ export function QuickDonationWidget() {
                     className="absolute rounded-full bg-white/40 pointer-events-none"
                   />
                 )}
-                <span className="relative z-10 flex items-center gap-2">
+                <span className="relative z-10 flex items-center gap-2 cursor-pointer">
                   {isProcessing ? (
                     <>
                       <svg className="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
