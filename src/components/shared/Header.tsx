@@ -107,13 +107,7 @@ export function Header() {
               <span>Confidential Helpline — Available to guide you</span>
             </div>
             <div className="flex items-center gap-6">
-              <a
-                href="tel:+919990145555"
-                className="flex items-center gap-1.5 hover:text-slate-200 transition-colors font-bold"
-              >
-                <Phone className="w-3.5 h-3.5 fill-current" />
-                <span>Call Now</span>
-              </a>
+              
               <a
                 href="https://wa.me/919990145555"
                 target="_blank"
