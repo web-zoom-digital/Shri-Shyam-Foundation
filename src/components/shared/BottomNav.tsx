@@ -46,11 +46,9 @@ export function BottomNav() {
               target={isHttp ? "_blank" : undefined}
               rel={isHttp ? "noopener noreferrer" : undefined}
               className={`flex flex-col items-center justify-center flex-1 h-full gap-0.5 transition-colors min-w-0 px-0.5 ${
-                link.color
-                  ? link.color
-                  : link.highlight || isActive
-                    ? "text-slate-900"
-                    : "text-slate-500"
+                link.highlight || isActive
+                  ? "text-slate-900"
+                  : "text-slate-500"
               }`}
             >
               <span
