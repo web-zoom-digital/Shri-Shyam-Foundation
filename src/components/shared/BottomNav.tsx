@@ -2,19 +2,17 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Home, Phone, Info } from "lucide-react"
+import { Home, Info } from "lucide-react"
 
 const bottomLinks = [
   { name: "Home", href: "/", icon: "home" as const },
-  { name: "Programs", href: "/programs", icon: "programs" as const },
   { name: "Cow Donate", href: "/cow-donation", icon: "cow" as const, highlight: true },
-  { name: "Call", href: "tel:+919990145555", icon: "call" as const },
+  { name: "Programs", href: "/programs", icon: "programs" as const },
 ]
 
 function NavIcon({ type, className }: { type: (typeof bottomLinks)[number]["icon"]; className?: string }) {
   if (type === "home") return <Home className={className} />
   if (type === "programs") return <Info className={className} />
-  if (type === "call") return <Phone className={className} />
   // cow — clear emoji so mobile always shows cow donation, not a generic donate icon
   return (
     <span className="leading-none select-none text-[20px]" aria-hidden>
