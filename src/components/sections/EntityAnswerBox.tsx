@@ -17,41 +17,8 @@ export function EntityAnswerBox() {
         </h2>
         <div className="prose prose-slate max-w-none">
           <p className="text-slate-700 text-base sm:text-lg leading-relaxed mb-4">
-            <strong>{orgPlainSummary.name}</strong> is {orgPlainSummary.what.replace(/^A /, "a ")} It
-            was founded in <strong>{orgPlainSummary.founded}</strong> and operates from{" "}
-            <strong>{orgPlainSummary.location}</strong>.
+            <strong>{orgPlainSummary.name}</strong> is {orgPlainSummary.what.replace(/^A /, "a ")}
           </p>
-          <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
-            <strong>How to help:</strong> {orgPlainSummary.howToHelp} {orgPlainSummary.taxNote}
-          </p>
-          <ul className="text-sm text-slate-600 space-y-1.5 mb-5 list-disc pl-5">
-            <li>
-              Phone:{" "}
-              <a className="text-slate-700 font-semibold hover:underline" href="tel:+919990145555">
-                {orgPlainSummary.phone}
-              </a>
-            </li>
-            <li>
-              Email:{" "}
-              <a
-                className="text-slate-700 font-semibold hover:underline"
-                href={`mailto:${orgPlainSummary.email}`}
-              >
-                {orgPlainSummary.email}
-              </a>
-            </li>
-            <li>
-              WhatsApp:{" "}
-              <a
-                className="text-slate-700 font-semibold hover:underline"
-                href="https://wa.me/919990145555"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                +91 9990145555
-              </a>
-            </li>
-          </ul>
           <div className="flex flex-wrap gap-3">
             <Link
               href="/about"
