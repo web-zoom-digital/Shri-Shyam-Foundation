@@ -95,7 +95,7 @@ export function Header() {
       >
         {/* Top Bar (Hidden on Mobile) */}
         <div
-          className={`hidden md:flex w-full transition-all duration-500 ${
+          className={`hidden lg:flex w-full transition-all duration-500 ${
             isScrolled
               ? "h-0 opacity-0 py-0 overflow-hidden border-b-0"
               : "bg-[#dc2626] text-white h-auto py-2 opacity-100"
