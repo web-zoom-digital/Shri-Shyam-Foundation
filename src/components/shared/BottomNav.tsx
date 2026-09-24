@@ -2,19 +2,21 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Home, Info, Cake } from "lucide-react"
+import { Home, Info, Cake, Heart } from "lucide-react"
+import { GiCow } from "react-icons/gi"
 
 interface BottomLink {
   name: string
   href: string
-  icon: "home" | "programs" | "cow" | "birthday"
+  icon: "home" | "programs" | "cow" | "birthday" | "donate"
   highlight?: boolean
 }
 
 const bottomLinks: BottomLink[] = [
   { name: "Home", href: "/", icon: "home" },
+  { name: "Donate", href: "/donate", icon: "donate" },
+  { name: "Cow Donate", href: "/cow-donation", icon: "cow", highlight: true },
   { name: "Programs", href: "/programs", icon: "programs" },
-  { name: "Cow Donate", href: "/cow-donation", icon: "cow" },
   { name: "Birthday", href: "/birthday", icon: "birthday" },
 ]
 
@@ -22,11 +24,9 @@ function NavIcon({ type, className }: { type: BottomLink["icon"]; className?: st
   if (type === "home") return <Home className={className} />
   if (type === "programs") return <Info className={className} />
   if (type === "birthday") return <Cake className={className} />
-  return (
-    <span className="leading-none select-none text-[20px]" aria-hidden>
-      🐄
-    </span>
-  )
+  if (type === "donate") return <Heart className={className} />
+  if (type === "cow") return <GiCow className={className} />
+  return null
 }
 
 export function BottomNav() {
