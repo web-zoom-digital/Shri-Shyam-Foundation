@@ -2,18 +2,26 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Home, Info } from "lucide-react"
+import { Home, Info, Cake } from "lucide-react"
 
-const bottomLinks = [
-  { name: "Home", href: "/", icon: "home" as const },
-  { name: "Cow Donate", href: "/cow-donation", icon: "cow" as const, highlight: true },
-  { name: "Programs", href: "/programs", icon: "programs" as const },
+interface BottomLink {
+  name: string
+  href: string
+  icon: "home" | "programs" | "cow" | "birthday"
+  highlight?: boolean
+}
+
+const bottomLinks: BottomLink[] = [
+  { name: "Home", href: "/", icon: "home" },
+  { name: "Programs", href: "/programs", icon: "programs" },
+  { name: "Cow Donate", href: "/cow-donation", icon: "cow" },
+  { name: "Birthday", href: "/birthday", icon: "birthday" },
 ]
 
-function NavIcon({ type, className }: { type: (typeof bottomLinks)[number]["icon"]; className?: string }) {
+function NavIcon({ type, className }: { type: BottomLink["icon"]; className?: string }) {
   if (type === "home") return <Home className={className} />
   if (type === "programs") return <Info className={className} />
-  // cow — clear emoji so mobile always shows cow donation, not a generic donate icon
+  if (type === "birthday") return <Cake className={className} />
   return (
     <span className="leading-none select-none text-[20px]" aria-hidden>
       🐄
