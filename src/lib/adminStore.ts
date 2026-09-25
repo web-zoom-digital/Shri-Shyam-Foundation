@@ -131,7 +131,7 @@ export async function getAllLeads(): Promise<FormLead[]> {
   const { data, error } = await supabase
     .from("leads")
     .select("*")
-    .order("createdat", { ascending: false })
+    .order("createdAt", { ascending: false })
 
   if (error) {
     console.error("Error fetching leads:", error)
@@ -194,7 +194,7 @@ export async function getAllPageVisits(): Promise<PageVisit[]> {
 
 export async function getAdminStats() {
   const [leadsRes, visitsRes] = await Promise.all([
-    supabase.from("leads").select("*").order("createdat", { ascending: false }),
+    supabase.from("leads").select("*").order("createdAt", { ascending: false }),
     supabase.from("page_visits").select("*").order("visits", { ascending: false })
   ])
 
