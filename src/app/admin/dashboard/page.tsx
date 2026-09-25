@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation"
 import { motion } from "framer-motion"
 import {
   Users, IndianRupee, TrendingUp, Eye, Download, LogOut,
-  RefreshCw, CheckCircle, Clock, AlertCircle, BarChart3, X
+  RefreshCw, CheckCircle, Clock, AlertCircle, BarChart3, X, Calendar, Filter
 } from "lucide-react"
 import type { FormLead, PageVisit } from "@/lib/adminStore"
 
@@ -25,7 +25,7 @@ type Stats = {
   dailyRevenue: DailyRevenue[]
 }
 
-type Tab = "payments" | "leads" | "pages"
+type Tab = "payments" | "leads" | "pages" | "campaigns"
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
@@ -236,6 +236,7 @@ export default function AdminDashboard() {
               { id: "payments" as Tab, label: "✅ Payments", count: leads.filter(l => l.status === "PAID").length },
               { id: "leads" as Tab, label: "📋 Form Leads", count: leads.filter(l => l.status !== "PAID").length },
               { id: "pages" as Tab, label: "📊 Page Stats", count: null },
+              { id: "campaigns" as Tab, label: "📊 Campaigns", count: null },
             ]).map(({ id, label, count }) => (
               <button
                 key={id}
@@ -286,6 +287,10 @@ export default function AdminDashboard() {
 
         {activeTab === "pages" && (
           <PageStatsTable pages={stats?.topPages || []} loading={loading} />
+        )}
+
+        {activeTab === "campaigns" && (
+          <CampaignsTab leads={leads} />
         )}
       </div>
     </div>
@@ -566,6 +571,189 @@ function DailyRevenueChart({ data, loading }: { data: DailyRevenue[]; loading: b
           </div>
         </div>
       )}
+    </div>
+  )
+}
+
+// ─── Campaigns Tab ──────────────────────────────────────────────────────────────
+
+function CampaignsTab({ leads }: { leads: FormLead[] }) {
+  const [fromDate, setFromDate] = useState("")
+  const [toDate, setToDate] = useState("")
+  const [filtered, setFiltered] = useState<FormLead[] | null>(null)
+
+  const handleQuickSelect = (type: string) => {
+    const today = new Date()
+    let start = new Date()
+    let end = new Date()
+
+    switch (type) {
+      case "Today":
+        break
+      case "Yesterday":
+        start.setDate(today.getDate() - 1)
+        end.setDate(today.getDate() - 1)
+        break
+      case "Last 7 Days":
+        start.setDate(today.getDate() - 6)
+        break
+      case "Last 30 Days":
+        start.setDate(today.getDate() - 29)
+        break
+      case "This Month":
+        start = new Date(today.getFullYear(), today.getMonth(), 1)
+        break
+    }
+    
+    // Format YYYY-MM-DD in local time
+    const formatYMD = (d: Date) => {
+      const year = d.getFullYear()
+      const month = String(d.getMonth() + 1).padStart(2, "0")
+      const day = String(d.getDate()).padStart(2, "0")
+      return `${year}-${month}-${day}`
+    }
+
+    setFromDate(formatYMD(start))
+    setToDate(formatYMD(end))
+  }
+
+  const handleFilter = () => {
+    if (!fromDate || !toDate) return
+    const start = new Date(fromDate).setHours(0, 0, 0, 0)
+    const end = new Date(toDate).setHours(23, 59, 59, 999)
+
+    const result = leads.filter(l => {
+      if (l.status !== "PAID") return false
+      const d = l.paidAt || l.createdAt
+      return d >= start && d <= end
+    })
+    setFiltered(result)
+  }
+
+  const handleDownloadPDF = () => {
+    window.print()
+  }
+
+  return (
+    <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden print:bg-white print:border-none print:text-black mt-8">
+      <div className="p-6 border-b border-slate-800 print:hidden">
+        <div className="flex items-center gap-3 mb-6">
+          <div className="w-10 h-10 rounded-xl bg-violet-500/20 flex items-center justify-center shrink-0 border border-violet-500/30">
+            <Calendar className="w-5 h-5 text-violet-400" />
+          </div>
+          <div>
+            <h2 className="font-bold text-white text-lg">Date-wise Income Report</h2>
+            <p className="text-slate-500 text-sm">Select date range or single day → Filter → PDF download</p>
+          </div>
+        </div>
+
+        <div className="flex flex-col lg:flex-row gap-6 mb-2">
+          {/* Quick Select */}
+          <div>
+            <p className="text-slate-500 text-xs font-semibold uppercase tracking-wider mb-2">Quick Select:</p>
+            <div className="flex flex-wrap gap-2">
+              {["Today", "Yesterday", "Last 7 Days", "Last 30 Days", "This Month"].map(b => (
+                <button
+                  key={b}
+                  onClick={() => handleQuickSelect(b)}
+                  className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs rounded-full transition-colors border border-slate-700"
+                >
+                  {b}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="w-px bg-slate-800 hidden lg:block" />
+
+          {/* Date Range */}
+          <div className="flex flex-wrap items-end gap-3">
+            <div>
+              <p className="text-slate-500 text-xs font-semibold uppercase tracking-wider mb-2">From Date</p>
+              <input
+                type="date"
+                value={fromDate}
+                onChange={e => setFromDate(e.target.value)}
+                className="bg-slate-800 border border-slate-700 text-slate-200 text-sm rounded-lg px-3 py-2 outline-none focus:border-violet-500"
+              />
+            </div>
+            <div>
+              <p className="text-slate-500 text-xs font-semibold uppercase tracking-wider mb-2">To Date</p>
+              <input
+                type="date"
+                value={toDate}
+                onChange={e => setToDate(e.target.value)}
+                className="bg-slate-800 border border-slate-700 text-slate-200 text-sm rounded-lg px-3 py-2 outline-none focus:border-violet-500"
+              />
+            </div>
+            <button
+              onClick={handleFilter}
+              className="flex items-center gap-2 bg-violet-600 hover:bg-violet-500 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors shadow-lg shadow-violet-900/40 border border-violet-500"
+            >
+              <Filter className="w-4 h-4" /> Filter
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div className="p-6 min-h-[300px]">
+        {!filtered ? (
+          <div className="flex flex-col items-center justify-center h-full text-slate-500 mt-10 print:hidden">
+            <Calendar className="w-12 h-12 mb-4 opacity-20" />
+            <p>Upar date select karo aur &quot;Filter karein&quot; click karo</p>
+            <p className="text-xs mt-1">Single day ke liye &quot;Today&quot; ya &quot;Yesterday&quot; quick button use karo</p>
+          </div>
+        ) : (
+          <div className="animate-in fade-in zoom-in duration-300">
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <p className="text-slate-400 text-sm print:text-black">Report for: <strong className="text-white print:text-black">{fromDate}</strong> to <strong className="text-white print:text-black">{toDate}</strong></p>
+                <p className="text-slate-500 text-xs mt-1 print:text-gray-600">Total Records: {filtered.length}</p>
+              </div>
+              <button
+                onClick={handleDownloadPDF}
+                className="flex items-center gap-1.5 px-3 py-2 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white rounded-lg text-sm font-semibold transition-all print:hidden"
+              >
+                <Download className="w-4 h-4" /> Export PDF
+              </button>
+            </div>
+
+            <div className="mb-6 bg-slate-800/50 p-4 rounded-xl border border-slate-700 flex items-center justify-between print:bg-gray-100 print:border-gray-300">
+              <span className="text-slate-400 font-semibold uppercase tracking-wider text-sm print:text-gray-700">Total Income in Period</span>
+              <span className="text-2xl font-extrabold text-emerald-400 print:text-black">
+                {formatINR(filtered.reduce((sum, l) => sum + l.amount, 0))}
+              </span>
+            </div>
+
+            {filtered.length > 0 ? (
+              <div className="overflow-x-auto rounded-xl border border-slate-700 print:border-gray-300">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-slate-800 print:bg-gray-200">
+                      {["Donor Name", "Phone", "Amount", "Source", "Date"].map(h => (
+                        <th key={h} className="px-4 py-3 text-left text-slate-400 font-semibold text-xs uppercase tracking-wider whitespace-nowrap print:text-gray-800">{h}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-800 print:divide-gray-300">
+                    {filtered.map(l => (
+                      <tr key={l.id} className="hover:bg-slate-800/40 print:hover:bg-transparent">
+                        <td className="px-4 py-3 font-semibold text-white whitespace-nowrap print:text-black">{l.name}</td>
+                        <td className="px-4 py-3 text-slate-300 print:text-gray-700">{l.phone}</td>
+                        <td className="px-4 py-3 font-bold text-slate-300 print:text-black">{formatINR(l.amount)}</td>
+                        <td className="px-4 py-3 text-slate-400 text-xs print:text-gray-600">{l.sourcePage}</td>
+                        <td className="px-4 py-3 text-slate-400 text-xs whitespace-nowrap print:text-gray-600">{formatDate(l.paidAt)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            ) : (
+              <p className="text-center text-slate-500 py-10 print:text-black">Is date range mein koi payment nahi mili.</p>
+            )}
+          </div>
+        )}
+      </div>
     </div>
   )
 }
